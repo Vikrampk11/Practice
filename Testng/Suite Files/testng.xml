@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name = "Annotation test" verbose="10">
+   <test name = "TestNG Annotations">
+      <classes>
+         <class name = "JavaBasics.Testng.TestngAnnotation"/>
+      </classes>
+   </test>
+</suite>

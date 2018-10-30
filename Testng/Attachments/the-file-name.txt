@@ -1,0 +1,30 @@
+{\n" + 
+					"  \"requestContext\":{\n" + 
+					"    \"dateRange\":\"quarterToDate\",\n" + 
+					"    \"periodType\":\"Daily\",\n" + 
+					"    \"compareTo\":\"yoy\",\n" + 
+					"    \"spot\":false,\n" + 
+					"    \"dataFilter\":{\n" + 
+					"      \"companies\":[\n" + 
+					"        {\"name\":\"PAYPAL\",\n" + 
+					"        \"regions\":[\n" + 
+					"          {\"name\":\"Core\",\n" + 
+					"          \"subMarkets\":[\n" + 
+					"            {\"name\":\"\",\n" + 
+					"            \"products\":[\n" + 
+					"              {\"name\":\"0. ALL\",\n" + 
+					"              \"subProducts\":[\n" + 
+					"                {\"name\":\"1. ALL\"\n" + 
+					"                }\n" + 
+					"                ]\n" + 
+					"              }\n" + 
+					"              ]\n" + 
+					"            }\n" + 
+					"            ]\n" + 
+					"          }\n" + 
+					"          ]\n" + 
+					"        }\n" + 
+					"        ]\n" + 
+					"    }\n" + 
+					"  }\n" + 
+					"}
