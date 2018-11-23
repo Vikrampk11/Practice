@@ -1,0 +1,239 @@
+
+Appium
+-----------
+
+* open source tool for automating native, mobile web and hybrid application
+* supports Andriod & IOS
+* cross platform
+* support multi languages
+
+types of application
+----------------------
+Native app - app runs on a device(Eg: Whatsapp), doesn't run on browser. Apps downloaded from playstore
+Web App/View, Browser App - only on web browser, Launch using mobile browser
+Hybrid App - runs on both mobile & browser. Apps from playstore, created by HTML(Eg: phonegap.com)
+
+
+appium latest - 1.4
+
+
+MobileDriver - Intf 
+AndroidDriver, AppiumDriver, IOSDriver, WindowsDriver - classes
+
+
+Necessary downloads,
+Java
+Java client - https://mvnrepository.com/artifact/io.appium/java-client
+Eclipse
+Selenium Jars - https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+Appium Server
+NodeJS
+Android SDK - 
+Microsoft .net
+GenyMotion(optional) - Virtual Device, dneshwaran/Fifa@123
+APK/ipa file - .apk for android and ipa for ios
+Device
+PDANET in mobile and in Desktop. Used to connect mobile with system
+TeamViewer - For mobile and Desktop to take remote control of mobile on system
+TeamViewer Quick Support - For mobile. Get the partner id and connect it through team viewer on desktop
+Instead TeamViewer you can connect real device with USB cable
+
+
+
+Step by Step Instructions to configure and run mobile 
+Automation testcases using Appium
+
+1. Download java and set Java_Home, PATH in environment variable
+http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html
+2. Download Android Studio from below link 
+3. https://developer.android.com/studio/index.html
+It has 2 parts, one is SDK(C:\Users\gkannan\AppData\Local\Android\Sdk) and another one is studio 
+4. Check Android installation path in machine
+5. Set Android_Home Environmental variables path to SDK location and include bin folder paths in PATH variable
+6. Open Android studio and configure virtual device/Emulator
+7. Open Emulator and check if it is working
+8. Download NodeJS
+9. https://nodejs.org/en/download/
+10. Set Node_Home environmental variables path
+11. Set npm enviromental variables path
+12. Download appium server from node
+13. Download appium java client library
+14. Install Eclipse - Create a project in eclipse - configure Appium libraries
+15. Start Appium server
+
+From cmd prompt - appium.js -a 127.0.0.1 -p 4001 --no-reset
+
+
+manikandan.dcte@gmail.com/test123!
+86sushil@gmail.com/Welcome1
+
+
+https://www.udemy.com/selenium-real-time-examplesinterview-questions/learn/v4/t/lecture/7207722?start=0
+
+
+AVD - Android Virtual Device
+
+** To launch/start emulator from cmd prompt - 
+cd C:\Users\gkannan\AppData\Local\Android\Sdk\platform-tools
+cmd - emulator -avd <emulator Name>
+
+
+Appium comes as an node module
+
+node is sw, npm is command line installer
+
+
+Client - Appium Java client, c# client etc
+Server - Appium server common across any client, listen to client code
+
+
+You can download any node module using NPM by cmd - npm install -g appium
+You can download any node module using NPM by cmd - npm install -g appium@beta --no-shrinkwrap
+
+* start appium server by cmd - appium
+You can see log on console itself. Instead 'appium &' will open appium UI and start
+
+appium.js -a 127.0.0.1 -p 4001 --no-reset
+
+
+You can uninstall appium by cmd - npm uninstall -g appium
+
+
+
+App officially given by appium 
+https://github.com/appium/java-client/blob/master/src/test/java/io/appium/java_client/ApiDemos-debug.apk
+
+
+
+http://demo.guru99.com
+mngr122845/YzagYnu
+
+Mukesh Otwani's Appium Tutorial
+https://www.youtube.com/watch?v=4RiieiylcnU&list=PL6flErFppaj20yvWkrYv6yO_I3jJWvYTj
+
+SDK Installation path - C:\Users\gkannan\AppData\Local\Android\Sdk\
+Android Studio path - C:\Program Files\Android\Android Studio
+
+
+** you can install the app on code by
+File fObj1 = new File("src");
+File fObj2 = new File(fObj1,"ApiDemos-debug.apk");
+cap.setCapability(MobileCapabilityType.APP, fObj2.getAbsolutePath());
+
+OR by - adb install <apk path>
+
+driver.installApp("/Users/johndoe/path/to/app.apk");
+
+* if app is not there, then it will install on mobile. If app is available then it will open the app
+
+
+
+ADB - Android Debug Bridge, is a command-line utility included with Google's Android SDK. ADB can control your device over USB from a computer, copy files back and forth, install and uninstall apps, run shell commands, and more
+
+Debian-based Linux users can type the following command to install ADB: sudo apt-get install adb
+Fedora/SUSE-based Linux users can type the following command to install ADB: sudo yum install android-tools
+
+adb install C:\package.apk – Installs the package located at C:\package.apk on your computer on your device.
+adb uninstall package.name – Uninstalls the package with package.name from your device. For example, you’d use the name com.rovio.angrybirds to uninstall the Angry Birds app.
+adb push C:\file /sdcard/file – Pushes a file from your computer to your device. For example, the command here pushes the file located at C:\file on your computer to /sdcard/file on your device
+adb pull /sdcard/file C:\file – Pulls a file from your device to your computer – works like adb push, but in reverse.
+adb logcat – View your Android device’s log. Can be useful for debugging apps.
+adb shell – Gives you an interactive Linux command-line shell on your device.
+adb shell command – Runs the specified shell command on your device.
+
+
+adb devices - list the devices connected/attached
+
+adb kill-server - To stop the adb server
+
+
+adb [-d | -e | -s serial_number] command
+-s: Install the app on the SD card.
+-d: Allow version code downgrade (debugging packages only).
+-g: Grant all runtime permissions
+
+adb install -r <new_app_apk>
+-r: Replace the existing app.
+-r: Reinstall an existing app, keeping its data.
+
+install [options] path
+-l: Install the package with forward lock.
+-r: Reinstall an existing app, keeping its data.
+-t: Allow test APKs to be installed. Gradle generates a test APK when you have only run or debugged your app or have used the Android Studio Build > Build APK command. If the APK is built using a developer preview SDK (if the targetSdkVersion is a letter instead of a number), you must include the -t option with the install command if you are installing a test APK.
+-i installer_package_name: Specify the installer package name.
+-s: Install package on the shared mass storage (such as sdcard).
+-f: Install package on the internal system memory.
+-d: Allow version code downgrade.
+-g: Grant all permissions listed in the app manifest.
+
+
+**  if app is already installed appium skips the installation, even if the app path is different
+https://github.com/appium/appium/issues/3377
+
+appActivity
+appPackage
+
+* if you have source code of an app, you can get appActivity & appPackage from 'AndroidManifest.xml' file(Eg: https://github.com/owncloud/android/blob/master/AndroidManifest.xml)
+package="com.owncloud.android"
+
+
+C:\Users\gkannan\AppData\Local\Android\Sdk\tools\bin\uiautomatorviewer - to identify elements, dev tool to find mobile elements
+
+** apk4fun.com - download apk files
+** Activity Launcher app - used to find appActivity & appPackage
+
+
+* Have to see drag and drop by TouchAction class..
+
+
+
+Troubleshooting steps
+-----------------------
+
+1. Make sure chromedriver configured correctly while using chrome browser
+2. Don't take latest selenium version 3.11...faced prob while using sendKeys() method. Getting NullPointerException
+3. While launching any web application on mobile like www.facebook.com, mobile will automatically take it mobile version like 'https://m.facebook.com/'...
+So no need to mentioned its mobile version url on driver.get();
+4. Make sure there is no space in folder name like 'APK File" instead keep it as 'APKFile'...It would be useful for you while choosing apk in appium UI
+5. while installing apk file present under 'Android SDK Files' by cmd - adb install D:\Softwares\Android SDK Files\selendroid-test-app-0.17.0.apk, surround the absolute path within "" like "D:\Softwares\Android SDK Files\selendroid-test-app-0.17.0.apk" to avoid space issue
+Now the cmd would be - adb install "D:\Softwares\Android SDK Files\selendroid-test-app-0.17.0.apk"
+6. Make sure device attached status shown as 'device'...if it is unauthorised, allow usb connection on mobile
+7. if not able to install apk on virtual device, 
+https://stackoverflow.com/questions/30405740/android-studio-how-can-i-make-an-avd-with-arm-instead-of-haxm
+https://stackoverflow.com/questions/24572052/install-failed-no-matching-abis-when-install-apk
+8. you can resourceid ad id(findElement(By.id('')))
+9. 
+
+
+
+
+
+updating app without uninstalling old one
+-------------------------------------------
+Stop your Appium server.
+Install the new app yourself (e.g. by running adb install -r <new_app_apk>).
+Set the "app" cap to the new version.
+Start the Appium server with --no-reset.
+Note: Make sure to stop/start Appium without --no-reset after you're done with the test.
+(This is how I do the upgrade testing anyway)
+
+1. Install the current Google Play store version of your app to your phone.
+2. Check that the version is working.
+3. Build a release candidate of the Android app. HINT: Be sure to sign the release candidate with the Play store keystore.
+4. Use the following command to test the update procedure:
+./adb install -r APPNAME.apk. The option -r means reinstall the app and keeping its data.
+5. The new version is now installed and can be tested
+
+
+
+cap.setCapability("noReset", "true"); //To avoid clearing the Android local data
+supposed to do?
+
+noReset just clears the app data, such as its cache.
+when set to true , it prevents the app from re-installing each time
+
+fullRest uninstalls the app. fullReset is generally used when you have newer versions of the app coming in fairly quickly. So with fullReset, you will always uninstall the app and then automatically install the new version.
+
+No reset: don’t reset app state between sessions (IOS: don’t delete app plist files; Android: don’t uninstall app before new session)
+
+Full reset: (iOS) Delete the entire simulator folder. (Android) Reset app state by uninstalling app instead of clearing app data. On Android, this will also remove the app after the session is complete.

@@ -1,0 +1,322 @@
+
+https://docs.oracle.com/javase/tutorial/essential/environment/paths.html
+You can run Java applications just fine without setting the PATH environment variable. Or, you can optionally set it as a convenience.
+
+Set the PATH environment variable if you want to be able to conveniently run the executables (javac.exe, java.exe, javadoc.exe, and so on) from any directory without having to type the full path of the command. If you do not set the PATH variable, you need to specify the full path to the executable every time you run it, such as:
+
+C:\Java\jdk1.7.0\bin\javac MyClass.java
+
+** Better to set 'PATH' in system variable - C:\Program Files\Java\jdk1.8.0_161\bin;C:\Program Files\Java\jre1.8.0_161\bin
+
+when echo %PATH%,
+System will echo both 'PATH' set under 'System Variables' and 'PATH' set under 'User Variables'(if any)
+
+
+The CLASSPATH variable is one way to tell applications, including the JDK tools, where to look for user classes. (Classes that are part of the JRE, JDK platform, and extensions should be defined through other means, such as the bootstrap class path or the extensions directory.)
+
+
+
+
+1. Place 'RepeatElement.java' in desktop(prog having pkg name)
+2. Compile by - C:\Users\gkannan\Desktop>javac -d . RepeatElement.java
+The -d switch specifies the destination where to put the generated class file. You can use any directory name like /home (in case of Linux), d:/abc (in case of windows) etc. If you want to keep the package within the same directory, you can use . (dot).
+Now, given pkg name in prog has been created at desktop and class file present in it
+
+3. To run java program present in package, 
+C:\Users\gkannan\Desktop>java -cp . JavaPrograms.RepeatElement 
+where -cp mentioned where is the class file of the program present
+
+
+* The new keyword is used to allocate memory at run time. All objects get memory in Heap memory area.
+
+* Initializing object simply means storing data into object
+There are 3 ways to initialize object in java.
+By reference variable -  Student s1=new Student();  s1.id=101;  
+By method - Student s1=new Student();  s1.insertRecord(111,"Karan"); 
+By constructor - new ConsOverloading(111,"Karan"); 
+
+
+There are many ways to create an object in java. They are:
+By new keyword
+By newInstance() method
+By clone() method
+By deserialization
+By factory method etc.
+
+*If you have to use an object only once, anonymous object is a good approach. For example:
+new Calculation();//anonymous object  
+
+* It is not necessary to write a constructor for a class. It is because java compiler creates a default constructor if your class doesn't have any.
+Rule: If there is no constructor in a class, compiler automatically creates a default constructor.
+
+
+boolean - 1 bit - false
+byte - 1 byte - 0
+short - 2 bytes - 0
+char - 2 bytes - '\u0000'
+int - 4 bytes - 0
+float - 8 bytes - 0.0f
+long - 4 bytes - 0L
+double - 8 bytes - 0.0d
+
+
+
+* Does constructor return any value?
+Ans:yes, that is current class instance (You cannot use return type yet it returns a value).
+
+
+The static keyword in java is used for memory management mainly.
+The static can be:
+variable (also known as class variable)
+method (also known as class method)
+block
+nested class
+
+** Java static property is shared to all objects.
+
+* There are two main restrictions for the static method. They are:
+1. The static method can not use non static data member or call non-static method directly.
+2. this and super cannot be used in static context.
+
+
+* this is a reference variable that refers to the current object
+1. this can be used to refer current class instance variable.
+2. this can be used to invoke current class method (implicitly)
+3. this() can be used to invoke current class constructor.
+
+
+** Multiple inheritance is not supported in java through class.
+
+* Method overloading increases the readability of the program.
+** In java, Method Overloading is not possible by changing the return type of the method only
+
+* Can we overload java main() method?
+Yes, by method overloading. You can have any number of main methods in a class by method overloading. But JVM calls main() method which receives string array as arguments only
+
+
+Usage of Java Method Overriding
+1. Method overriding is used to provide specific implementation of a method that is already provided by its super class.
+2. Method overriding is used for runtime polymorphism
+
+* Can we override static method?
+No, static method cannot be overridden. It can be proved by runtime polymorphism, so we will learn it later.
+
+* Why we cannot override static method?
+because static method is bound with class whereas instance method is bound with object. Static belongs to class area and instance belongs to heap area.
+
+
+** Note: A class cannot be private or protected except nested class.
+
+
+private - within class
+default - within package
+protected - outside package but through inheritance only
+public 
+
+
+* The super keyword in java is a reference variable which is used to refer immediate parent class object.
+* Whenever you create the instance of subclass, an instance of parent class is created implicitly which is referred by super reference variable.
+
+Usage of java super Keyword
+1. super can be used to refer immediate parent class instance variable.
+2. super can be used to invoke immediate parent class method.
+3. super() can be used to invoke immediate parent class constructor.
+
+** Note: super() is added in each class constructor automatically by compiler if there is no super() or this().
+
+
+
+*If you make any variable as final, you cannot change the value of final variable(It will be constant).
+
+* If you make any method as final, you cannot override it.
+
+* If you make any class as final, you cannot extend it.
+
+* Is final method inherited?
+Ans) Yes, final method is inherited but you cannot override it.
+
+
+** Rule: Runtime polymorphism can't be achieved by data members.
+
+** The java compiler adds public and abstract keywords before the interface
+method and public, static and final keywords before data members.
+
+** Rule: If there is any abstract method in a class, that class must be abstract.
+
+** Rule: If you are extending any abstract class that have abstract method, you must either provide
+the implementation of the method or make this class abstract.
+
+
+** ArrayList can't have primitive data type(byte(1), short(2), int(4), float(4), long(8), double(8), char(2), boolean)
+
+default vaule of primitive type is, 
+byte, short, int,long - 0
+float - 0.0f
+double - 0.0d
+boolean - false
+char - '\u0000'
+
+
+
+** How hashmap works internally - https://www.youtube.com/watch?v=c3RVW3KGIIE
+
+Hashmap has a table, an array of Nodes,
+* Index of null key is always zero. "HashMap allows null key which always goes to index 0 as hash of null is 0"
+* the hashcode of null will be zero
+
+Node<K, V>
+{
+int hash,
+K Key, 
+V Value,
+Node<K,V> next
+}
+
+
+put(K k, V v)
+{
+hash(k)
+index = hash & (n-1)
+}
+
+V get(Object key)
+{
+hash(key)
+index = hash & (n-1)
+}
+
+Each Node itself can be a linked list
+Each node called as 'Bucket'
+
+
+** Since ListIterator can access elements in both directions and supports additional operators, ListIterator cannot be applied on Set (e.g., HashSet and TreeSet)
+
+
+Garbage Collection
+--------------------
+Garbage Collection is process of reclaiming the runtime unused memory automatically. In other words, it is a way to destroy the unused objects.
+
+
+
+
+Set : Doesn't allow duplicates. Example implementations of Set 
+      interface are HashSet (Hashing based) and TreeSet (balanced
+      BST based). Note that TreeSet implements SortedSet.
+
+List : Can contain duplicates and elements are ordered. Example
+       implementations are LinkedList (linked list based) and
+       ArrayList (dynamic array based)
+
+Queue : Typically order elements in FIFO order except exceptions
+        like PriorityQueue.  
+
+Deque : Elements can be inserted and removed at both ends. Allows
+        both LIFO and FIFO. 
+
+Map : Contains Key value pairs. Doesn't allow duplicates.  Example
+      implementation are HashMap and TreeMap. 
+      TreeMap implements SortedMap.  
+
+
+
+String[] aArray = new String[5];
+String[] bArray = {"a","b","c", "d", "e"};
+String[] cArray = new String[]{"a","b","c","d","e"};
+
+
+Data Type and its size and its default value
+-------------------------------------------------
+
+boolean - 1 bit - false
+byte - 1 byte - 0
+short - 2 bytes - 0
+char - 2 bytes - '\u0000'
+int - 4 bytes - 0
+float - 4 bytes - 0.0f
+long - 8 bytes - 0L
+double - 8 bytes - 0.0d
+
+
+
+Type Promotion
+-----------------
+byte -> short -> int -> long
+byte -> short -> int -> double
+byte -> short -> int -> float
+byte -> short -> int -> float -> double
+byte -> short -> int -> long -> double
+byte -> short -> int -> long -> float
+byte -> short -> int -> long -> float -> double
+char -> int -> long
+char -> int -> double
+char -> int -> float
+char -> int -> float -> double
+char -> int -> long -> double
+char -> int -> long -> float
+char -> int -> long -> float -> double
+
+
+
+
+
+
+
+Arrays.sort
+Arrays.sort(arr, 0, 4);
+Arrays.sort(arr, Collections.reverseOrder());
+Collections.sort(list);
+Collections.sort(list, new Comparator()); - for sorting values in map, sorting multiple column sequence
+Collections.sort(list, Collections.reverseOrder()); - reverse of list
+int[] combinedIntArray = ArrayUtils.addAll(intArray, intArray2);
+int[] removed = ArrayUtils.removeElement(intArray4, 3);
+ArrayUtils.reverse(intArray3);
+
+
+
+// create comparator for reverse order
+Comparator<Integer> cmp = Collections.reverseOrder();
+
+// sort the list
+Collections.sort(list, cmp);  
+
+
+Methods of Object Class @Trimble
+-----------------------------------
+hashCode(), equals(), clone(), toString(), notify(), notifyAll(), wait(), finalize(),  
+
+Methods of Collection interface @Global Logic
+------------------------------------------------
+add(Object), addAll(),remove(), removeAll(), retainAll(), size(), clear(), contains(), containsAll(), iterator(), toArray(), isEmpty(), equals(), hashCode()
+
+Methods of List interface
+---------------------------
+add(), addAll(), remove(), get(), set(), listIterator(), size()
+
+Methods of set interface
+---------------------------
+add(), addAll(), clear(), contains(), containsAll(), equals(), hashCode(), isEmpty(), iterator(), remove(), removeAll(), size(), toArray()
+
+
+String VS StringBuffer
+---------------------------
+String class is immutable.
+StringBuffer class is mutable.
+String is slow and consumes more memory when you concat too many strings because every time it creates new instance.
+StringBuffer is fast and consumes less memory when you cancat strings.
+String class overrides the equals() method of Object class. So you can compare the contents of two strings by equals() method.
+StringBuffer class doesn't override the equals() method of Object class.
+
+
+StringBuffer Vs StringBuilder
+--------------------------------
+StringBuffer is synchronized i.e. thread safe. It means two threads can't call the methods of StringBuffer simultaneously.
+StringBuffer is less efficient than StringBuilder.
+StringBuilder is non-synchronized i.e. not thread safe. It means two threads can call the methods of StringBuilder simultaneously.
+StringBuilder is more efficient than StringBuffer.
+
+The ThreadLocal class in Java enables you to create variables that can only be read and written by the same thread. Thus, even if two threads are executing the same code, and the code has a reference to a ThreadLocal variable, then the two threads cannot see each other's ThreadLocal variables.
+
+
+** By default Unchecked Exceptions are forwarded in calling chain (propagated).
+** By default, Checked Exceptions are not forwarded in calling chain (propagated).
+

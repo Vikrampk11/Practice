@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "059b93ff-4c7b-4fae-ab74-9d672deadce9",
+		"name": "Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "eff05694-c41e-4238-a61b-7dcf1c4b3a31",
+						"type": "text/javascript",
+						"exec": [
+							"var d = pm.response.json();",
+							"console.log(d);",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"pm.globals.set(\"new_Var\", d.result[0].sys_id);"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "sysparm_fields",
+						"value": "sys_id,number,type",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://dev64729.service-now.com/api/now/table/change_request",
+					"protocol": "https",
+					"host": [
+						"dev64729",
+						"service-now",
+						"com"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						"change_request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "sysparm_fields",
+						"value": "sys_id,number",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/xml"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"test_plan\":\"Sunday assignment\"\n}"
+				},
+				"url": {
+					"raw": "https://dev64729.service-now.com/{{resources}}/{{table}}?sysparm_fields=sys_id,number,type",
+					"protocol": "https",
+					"host": [
+						"dev64729",
+						"service-now",
+						"com"
+					],
+					"path": [
+						"{{resources}}",
+						"{{table}}"
+					],
+					"query": [
+						{
+							"key": "sysparm_fields",
+							"value": "sys_id,number,type"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Far.ran-00",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"type\":\"normal\"\n}"
+				},
+				"url": {
+					"raw": "https://dev64729.service-now.com?sysparm_fields=number,type",
+					"protocol": "https",
+					"host": [
+						"dev64729",
+						"service-now",
+						"com"
+					],
+					"query": [
+						{
+							"key": "sysparm_fields",
+							"value": "number,type"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Far.ran-00",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://dev64729.service-now.com/api/now/table/change_request/32a4278adb5313002baf4870399619dd",
+					"protocol": "https",
+					"host": [
+						"dev64729",
+						"service-now",
+						"com"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						"change_request",
+						"32a4278adb5313002baf4870399619dd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Put new",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"type\":\"normal\"\n}"
+				},
+				"url": {
+					"raw": "https://dev64729.service-now.com/api/now/table/change_request/1082ef4adb5313002baf48703996195a?sysparm_fields=number,type",
+					"protocol": "https",
+					"host": [
+						"dev64729",
+						"service-now",
+						"com"
+					],
+					"path": [
+						"api",
+						"now",
+						"table",
+						"change_request",
+						"1082ef4adb5313002baf48703996195a"
+					],
+					"query": [
+						{
+							"key": "sysparm_fields",
+							"value": "number,type"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "Far.ran-00",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "admin",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "4991edcf-fe2e-4619-b37c-5bf8286d6f91",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "433d676d-c2fb-49ce-973c-96def8ee4256",
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Response time is less than 3s\", function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(3000);",
+					"});"
+				]
+			}
+		}
+	]
+}

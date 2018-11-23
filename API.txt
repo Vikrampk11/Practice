@@ -1,0 +1,356 @@
+API - Application Programming Interface
+
+* basically allows one piece of sw talking to another 
+* API helps you to communicate between 2 diff application 
+
+time effective/quick response time
+language independent
+easy integration with GUI
+
+
+POJO (Plain old Java Object)
+
+
+REST - Representational State Transfer
+is an architectural style(not protocol)
+
+* Rest-Assured is a Java based library that is used to test RESTful Web Services.
+
+
+stateless - https://restfulapi.net/statelessness/
+
+webservice
+it is a technology which allow communication between diff languages. it allows us to pass
+the data over the internet in easy way.
+provides an easy way to achieve interoperability
+it follows collection of standards/protocols for exchanging information between 2 devices over the internet/network
+
+
+soapUI - supports both SOAP and REST
+
+
+
+
+REST API Automation
+----------------------
+REST API concepts and examples - https://www.youtube.com/watch?v=7YcW25PHnAA
+
+https://www.youtube.com/watch?v=aqrxDxumKZQ
+https://www.youtube.com/watch?v=7RUzarUREpo
+
+
+
+apigee - paid tool
+Get API - https://www.programmableweb.com/apis/directory
+
+
+HTTP method for the action performed by API
+-------------
+GET - requests a representation of the specified resource. Requests using GET should only retrieve data
+POST - used to submit an entity to the specified resource, often causing a change in state or side effects on the server
+PUT - replaces all current representations of the target resource with the request payload.
+DELETE - deletes the specified resource
+TRACE - performs a message loop-back test along the path to the target resource
+OPTIONS - used to describe the communication options for the target resource
+HEAD - asks for a response identical to that of a GET request, but without the response body
+PATCH - used to apply partial modifications to a resource
+
+
+
+RestAssured - https://github.com/rest-assured/rest-assured/wiki/Downloads
+---------------
+* is an open source java Domain Specific Language(DSL)
+* built on top of httpclient
+* it support both xml and JSON format
+* easy to use
+* Unfortunately Rest Assured is not thread safe out of the box.
+* REST Assured has not been designed for parallel testing unfortunately
+https://github.com/rest-assured/rest-assured/issues/534
+
+
+RestAssured support following 
+POST - 201 created
+GET - 200 OK
+PUT - 200 OK
+DELETE - 204 No Content
+OPTIONS 
+PATCH
+HEAD
+TRACE
+CONNECT
+
+
+Maven's dependency of Rest Assured from http://rest-assured.io/ - https://github.com/rest-assured/rest-assured/wiki/ReleaseNotes30
+Maven's dependency of rest Assured from maven's repo - https://mvnrepository.com/artifact/io.rest-assured/rest-assured
+
+<dependency>
+  <groupId>io.rest-assured</groupId>
+  <artifactId>rest-assured</artifactId>
+  <version>${rest-assured.version}</version>
+</dependency>
+
+
+
+Postman Client - KG0palsamY@1
+
+
+GET, DELETE & Put - will not create additional load on server
+GET - simply retrieves the data from server, no changes to server or resource. Eg: Check any news, searching anything on web. 
+POST - will create additional load on server. Will create resource on server. Eg: Uploading photo, send a tweet or submitting the form so on
+DELETE - delete the data or resource from the server. Eg: Deleting a photo from acc, deleting any file
+PUT - update existing resource
+
+
+1XX - informational
+2XX - success
+3XX - redirection
+4XX - client error
+5XX - Server Error
+
+
+Status Codes
+----------------
+200 OK
+201 Created
+
+202 Accepted - The request has been accepted for processing, but the processing has not been completed. You accepted the DELETE request, but it might take a long time and you're going to do it asynchronously. The client should check it later. 202 Accepted
+
+203 Non-Authoritative Information
+
+204 No Content - The server successfully processed the request and is not returning any content.if an operation is successful and the response body is empty return 204. If an operation is successul and the response body is NOT empty, return 200....200 (if you want send some additional data in the Response) or 204 (recommended).
+The server successfully processed the request and is not returning any content
+
+205 Reset Content
+302 Found
+
+400 Bad Request(Malformed syntax or a bad query is strange but possible).
+The server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, size too large, invalid request message framing, or deceptive request routing)
+
+401 Unauthorized - Although the HTTP standard specifies "unauthorized", semantically this response means "unauthenticated". That is, the client must authenticate itself to get the requested response.
+You are not logged in, e.g. using a valid access token
+
+402 Payment Required
+
+403 Forbidden - The client does not have access rights to the content, i.e. they are unauthorized, so server is rejecting to give proper response.
+The request was valid, but the server is refusing action. The user might not have the necessary permissions for a resource, or may need an account of some sort.
+You are authenticated but do not have access to what you are trying to do
+
+404 Not Found - The server can not find requested resource.
+
+405 Method not allowed
+
+409 Conflict
+
+415 Unsupported Media Type - The request entity has a media type which the server or resource does not support. For example, the client uploads an image as image/svg+xml, but the server requires that images use a different format.
+
+500 Internal Server Error - A generic error message, given when an unexpected condition was encountered and no more specific message is suitable
+
+501 Not Implemented
+
+502 Bad Gateway
+
+503 Service Unavailable
+
+504 Gateway Timeout
+
+
+
+WSDL – Web Service Description (or Definition, in later versions) Language
+*** It is a common misconception that the WSDL is a requirement for a SOAP service. SOAP was designed before the WSDL, and therefore the WSDL is optional. Although, it is significantly harder to interface with a web service that does not have a WSDL. 
+
+
+WADL – Web Application Description Language
+
+** REST accesses data while SOAP performs operations through a more standardized set of messaging patterns
+
+
+
+Fake API - https://reqres.in/
+
+Fake API GIT - https://github.com/typicode/json-server
+
+http://localhost:3000/posts
+http://localhost:3000/comments
+http://localhost:3000/profile
+
+install node js on windows
+1. C:\Program Files\nodejs>npm install -g json-server
+2. C:\Program Files\nodejs>json-server --watch C:\Gopal\db.json
+
+RestAssured - http://toolsqa.com/api-automation-testing-tutorial/
+
+
+
+Public APIs for testing
+------------------------------
+https://github.com/toddmotto/public-apis
+https://dog.ceo/dog-api/
+https://www.petfinder.com/developers/api-docs/
+
+
+
+RestAssured
+-------------
+Response
+Headers
+ResponseBody
+
+
+
+Authentication is the process of verifying who you are. When you log on to a PC with a user name and password you are authenticating
+Authentication is about who somebody is
+Authentication means identifying who is the user is?
+
+Authorization is the process of verifying that you have access to something. Gaining access to a resource (e.g. directory on a hard disk) because the permissions configured on it allow you access is authorization.
+Authorisation is about what they're allowed to do.
+Authorisation means what kind of rights does the user have?
+
+SSL - secure Socket Layer
+
+
+A cookie is a piece of data that is issued by a server in an HTTP response and stored for future use by the HTTP client. The client then re-supplies the cookie value in subsequent requests to the same server. This mechanism allows the server to store user preferences and identity individual users.
+
+Web pages often contain content that remains unchanged for long periods of time. For example, an image containing a company logo may be used without modification for many years. It is wasteful in terms of bandwidth and round trips to repeatedly download images or other content that is not regularly updated.
+
+
+On RestAssured - response.getBody().asString();
+
+On HttpClient,
+String json_string = EntityUtils.toString(response.getEntity());
+JSONObject temp1 = new JSONObject(json_string);
+
+
+
+given().contentType(ContentType.TEXT). ..
+given().contentType("application/json"). ..
+
+given().auth().basic("username", "password"). ..
+
+
+given().
+       param("param1", "value1").
+       param("param2", "value2").
+when().
+       get("/something");
+
+
+String url = "https://sfbay.craigslist.org";
+String paramsValue1 = "toyota"
+String paramsValue2 = "rel"
+
+HttpClient client = new DefaultHttpClient();
+String queryParams1 = "?query=" + paramsValue1;
+String queryParams2 = "&sort=" + paramsValue2;
+HttpGet getRequest = new HttpGet(url + "/search/sss" + queryParams1+queryParams2);
+HttpResponse response = client.execute(getRequest);
+int responseCode = response.getStatusLine().getStatusCode();
+ 
+            System.out.println("**GET** request Url: " + request.getURI());
+            System.out.println("Response Code: " + responseCode);
+            System.out.println("Content:-\n");
+            BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
+ 
+            String line = "";
+            while ((line = rd.readLine()) != null) {
+                System.out.println(line);
+            }
+
+
+
+readyapi - upgraged version of SOATest tool
+
+
+
+SOA - service-oriented architecture
+
+
+httpclient
+------------
+httpclient jar -- version 4.3.3
+import org.apache.http.client.methods.HttpDelete;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpPut;
+
+Refer - http://www.mkyong.com/webservices/jax-rs/restful-java-client-with-apache-httpclient/
+
+
+Accept and Content-type are both headers sent from a client(browser say) to a service.
+Accept header is a way for a client to specify the media type of the response content it is expecting and Content-type is a way to specify the media type of request being sent from the client to the server.
+Accept header tells the server the MIME-type of the resource the browser is looking for. For example, the server can send plain text, HTML, JSON, etc.
+
+"accept", "application/json
+"Content-Type","application/json"
+
+
+GET Method
+------------
+DefaultHttpClient httpClient = new DefaultHttpClient();
+HttpGet getRequest = new HttpGet("REST URI");
+
+((HttpMessage) getRequest).addHeader("Content-type","application/json"); 
+getRequest.addHeader("accept", "application/json");
+
+HttpResponse response = httpClient.execute(getRequest);
+if (response.getStatusLine().getStatusCode() != 200) {
+			throw new RuntimeException("Failed : HTTP error code : "
+			   + response.getStatusLine().getStatusCode());
+		}
+
+		BufferedReader br = new BufferedReader(
+                         new InputStreamReader((response.getEntity().getContent())));
+
+		String output;
+		System.out.println("Output from Server .... \n");
+		while ((output = br.readLine()) != null) {
+			System.out.println(output);
+		}
+
+POST Method
+---------------
+DefaultHttpClient httpClient = new DefaultHttpClient();
+HttpPost postRequest = new HttpPost("REST URI");
+StringEntity input = new StringEntity("payload");
+input.setContentType("application/json");
+postRequest.setEntity(input);
+HttpResponse response = httpClient.execute(postRequest);
+if (response.getStatusLine().getStatusCode() != 201) {
+			throw new RuntimeException("Failed : HTTP error code : "
+				+ response.getStatusLine().getStatusCode());
+		}
+
+		BufferedReader br = new BufferedReader(
+                        new InputStreamReader((response.getEntity().getContent())));
+
+		String output;
+		System.out.println("Output from Server .... \n");
+		while ((output = br.readLine()) != null) {
+			System.out.println(output);
+		}
+
+
+
+
+httppost on paypal
+-------------------------
+
+    /*CloseableHttpClient client = HttpClients.createDefault();
+			    HttpPost httpPost = new HttpPost("http://jaws/v1/QIJawsServices/restservices/database/MONEY/query");
+			    query = "{\"sqlQuery\":\"" + query + "\"}";
+			    StringEntity entity = new StringEntity(query,ContentType.APPLICATION_JSON);
+			    //StringEntity entity = new StringEntity(query,ContentType.create("application/json"));
+			    //StringEntity entity = new StringEntity(query);
+			    //input.setContentType("application/json");
+			    httpPost.setEntity(entity);
+			    httpPost.setHeader("Host","jaws");
+			    httpPost.setHeader("Origin","http://jaws");
+			    httpPost.setHeader("Accept", "application/json");
+			    httpPost.setHeader("Hostname","msmaster.qa.paypal.com");
+			    httpPost.setHeader("Referer","http://jaws/v1/QIJawsServices/");
+			    httpPost.setHeader("Content-type", "application/json");
+			    CloseableHttpResponse response = client.execute(httpPost);
+			    Assert.assertEquals(response.getStatusLine().getStatusCode(), 200);
+			    client.close();*/
+
+
+

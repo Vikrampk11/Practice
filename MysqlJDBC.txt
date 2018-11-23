@@ -1,0 +1,48 @@
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import com.mysql.jdbc.Driver;
+
+public class MysqlJDBC {
+
+	
+	
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+
+		Connection conObj=null;
+		String driver = "com.mysql.jdbc.driver";
+		String url="jdbc:mysql://localhost:3306/";
+		String db = "testdb";
+		String password = "test@123";
+		
+		try
+		{
+		//The forName() method of Class class is used to register the driver class. This method is used to dynamically load the driver class.
+		Class.forName(driver);
+		
+		//The getConnection() method of DriverManager class is used to establish connection with the database.
+		//DriverManager class acts as an interface between user and drivers. It keeps track of the drivers that are available and handles establishing a //connection between a database and the appropriate driver
+		conObj = DriverManager.getConnection(url+db,"root",password);
+		
+		//A Connection is the session between java application and database
+		//The createStatement() method of Connection interface is used to create statement. The object of statement is responsible to execute queries with the database.
+		//The Statement interface provides methods to execute queries with the database. The statement interface is a factory of ResultSet i.e. it provides factory method to get the object of ResultSet.
+		Statement stObj = conObj.createStatement();
+		
+		//The executeQuery() method of Statement interface is used to execute queries to the database. This method returns the object of ResultSet that can be used to get all the records of a table.
+		ResultSet rs = stObj.executeQuery("select * from persons");
+		while(rs.next())
+		{  
+			System.out.println(rs.getInt(1)+" "+rs.getString(2));  
+		}  
+		conObj.close();
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+	}
+}

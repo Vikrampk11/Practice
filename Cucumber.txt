@@ -1,0 +1,336 @@
+Cucumber Tutorial - http://learn-automation.com/cucumber-tutorials/
+
+http://toolsqa.com/cucumber/cucumber-tutorial/
+
+
+
+** Cucumber internally implemented by RUBY
+
+Cucumber is a testing framework which supports Behavior Driven Development (BDD). It lets us define application behavior in plain meaningful English text using a simple grammar defined by a language called Gherkin. Cucumber itself is written in Ruby, but it can be used to “test” code written in Ruby or other languages including but not limited to Java, C# and Python.
+
+BDD is an extension of TDD. Like in TDD in BDD also we write tests first and the add application code
+
+Tools like RSpec (for Ruby) or in .NET something like MSpec or SpecUnit is popular for Unit Testing following BDD approach
+
+** Improving communication and supporting automated Acceptance Tests are distinguishable features of Cucumber in comparison to other automation testing frameworks
+
+** the main idea behind BDD is that it's driven to prevent communication gaps, that is having everyone in the team communicating more often, better and based on real world examples and not on abstract and imperative requirements
+
+** Cucumber – a Behavior Driven Development (BDD) framework which is used with Selenium for performing acceptance testing.
+
+BDD focus on what to test not how to test
+it use Gherkin language
+
+Tools available for BDD - Cucumber, jbehave, specFlow(For .Net Environment)
+JDave, concordion, Easy B, FitNesse, BeanSpec
+
+
+To download necessary cucumber jars,Refer - http://toolsqa.com/cucumber/download-cucumber-jvm-eclipse/
+
+cucumber eclipse plugin(optional) - http://cucumber.github.com/cucumber-eclipse/update-site
+
+
+Necessary jar/dependency for cucumber
+---------------------------------------
+cucumber-core
+cucumber-java
+cucumber-junit
+cucumber-jvm-deps
+cucumber-reporting
+gherkin
+junit
+mockito-all
+cobertura
+
+
+
+* If you starts as Java Project, then add all cucumber jars and selenium jar in build path. 
+* If you starts as maven project, then all all maven dependency on POM.xml file
+* A feature file can have multiple scenarios
+
+Gherkin Syntax - https://cucumber.io/docs/reference
+
+** A Feature File is an entry point to the Cucumber tests
+
+Feature: Defines what feature you will be testing in the tests below
+
+Given: Tells the pre-condition of the test
+Given defines a precondition to the test
+
+When keyword defines the test action that will be executed. By test action we mean the user input action.
+
+And: Defines additional conditions of the test
+
+Then: States the post condition. You can say that it is expected result of the test.
+Then keyword defines the Outcome of previous steps. We can understand it best by looking at the test above and adding a Then step there.
+
+Background: is used to define steps which are common to all the tests in the feature file.
+
+
+** Cucumber uses Junit framework to run.
+
+
+Example feature File,
+
+Feature: Test Facebook Smoke Scenario
+Scenario: Test Login with Valid Credentials
+	Given Open firefox and start application
+	When I enter valid username and valid password
+	Then User should be able to login successfully
+
+
+Feature: LogIn Action Test
+Description: This feature will test a LogIn and LogOut functionality
+
+Or
+
+Feature: LogIn Action Test
+This feature will test a LogIn and LogOut functionality
+
+
+
+TestRunner class
+
+@RunWith(Cucumber.class) - Means run it as cucumber class
+@CucumberOptions(features="Features",glue= {"StepDefinition"}) - glue defines where to find step def file.Mention directory name under the project step def file is available
+
+features: set - the path of the feature file. {}
+glue: set - path of the step definition file. {}
+tags: instruct - what tags in the feature files should be executed. {}
+dryRun: true - checks if all the steps have the step definition. default value is 'false'
+monochrome: true - display the console output in much read format. default value is 'false'
+format: set - what all report formaters to use. default value is 'false'
+strict: true - will fail execution if there are undefined or pending steps. default value is 'false'
+
+
+format = {“pretty“}
+format = {“html:Folder_Name“}
+format = {“json:Folder_Name/cucumber.json“}
+format = { “junit:Folder_Name/cucumber.xml“}
+
+For report,
+plugin={"html:target/cucumber-html-report","json:target/cucumber.json","pretty:target/cucumber-pretty.txt","usage:target/cucumber-usage.json","junit:target/cucumber-results.xml"}
+
+
+
+@Given("^Launch application$")
+@When("^User enters \"(.*)\" and \"(.*)\"$") - "(.*)"
+
+DataTable can be defined with/without header, EG
+|UserName|Password|
+|test1|test1|
+|test2|test2|
+
+OR
+
+|test1|test1|
+|test2|test2|
+
+
+
+Cucumber Custom report plugin - https://github.com/email2vimalraj/CucumberExtentReporter
+
+Parameter passing - When I enter valid "username" and valid "password"
+
+3 ways to pass parameters - 1. repeat the scenario with diff parameters 2. Scenario Outline: & Examples: 3. DataTable
+
+
+
+<dependency>
+    <groupId>info.cukes</groupId>
+    <artifactId>cucumber-junit</artifactId>
+    <version>1.2.2</version>
+    <scope>test</scope>
+</dependency>
+<dependency>
+    <groupId>info.cukes</groupId>
+    <artifactId>cucumber-java</artifactId>
+    <version>1.2.2</version>
+</dependency>
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.12</version>
+    <scope>test</scope>
+</dependency>
+ <dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>2.53.0</version>
+</dependency>
+
+
+
+
+plugin={"html:targat/cucumber-html-report"}
+
+* target is default folder of maven
+
+various Report,
+plugin={"html:target/cucumber-html-report", "json:target/cucumber.json", "pretty:target/cucumber-pretty.txt", 
+				"usage:target/cucumber-usage.json","junit:target/cucumber-results.xml"}
+
+
+DataDrivenTest using Scenario Outline
+Example Keyword
+
+
+
+
+
+WebDriver driver;
+	
+	@Given("^Open firefox and start application$")
+	public void open_firefox_and_start_application() throws Throwable {
+	 
+		driver = new FirefoxDriver();
+		driver.manage().window().maximize();
+		driver.get("http://facebook.com");
+	}
+
+	@When("^I enter valid username and valid password$") //when username and password are hardcoded
+	//@When("^I enter valid \"(.*?)\" and valid \"(.*?)\"$") //when username and password given through feature file
+	public void i_enter_valid_and_valid(String userName, String pwd) throws Throwable {
+	
+		driver.findElement(By.id("email")).sendKeys(userName);
+		driver.findElement(By.id("pass")).sendKeys(pwd);
+	 
+	}
+
+	@Then("^User should be able to login successfully$")
+	public void user_should_be_able_to_login_successfully() throws Throwable {
+		driver.findElement(By.id("u_0_a")).click();
+	}
+
+
+https://www.google.com/gmail/about/
+html/body/nav/div/a[2]
+.//*[@id='identifierId']
+.//*[@class='RveJvd snByac']
+.//*[@type='password']
+.//*[@class='RveJvd snByac']
+
+
+//button[contains(text(),'Log In')]
+
+
+DataTable
+--------------
+When User enters Credentials to LogIn
+    | testuser_1 | Test@153 |
+
+@When("^User enters Credentials to LogIn$")
+public void user_enters_testuser__and_Test(DataTable usercredentials) throws Throwable 
+{
+	List<List<String>> data = usercredentials.raw();
+	driver.findElement(By.id("log")).sendKeys(data.get(0).get(0)); 
+	driver.findElement(By.id("pwd")).sendKeys(data.get(0).get(1));
+	driver.findElement(By.id("login")).click();
+}
+
+
+And User enters Credentials to LogIn
+| Username   | Password |
+| testuser_1 | Test@153 |
+
+@When("^User enters Credentials to LogIn$")
+public void user_enters_testuser_and_Test(DataTable usercredentials) throws Throwable 
+{
+	//Write the code to handle Data Table
+	List<Map<String,String>> data = usercredentials.asMaps(String.class,String.class);
+	driver.findElement(By.id("log")).sendKeys(data.get(0).get("Username")); 
+	driver.findElement(By.id("pwd")).sendKeys(data.get(0).get("Password"));
+	driver.findElement(By.id("login")).click();
+}
+
+
+Maps in Data Tables with Multiple Test Data
+And User enters Credentials to LogIn
+| Username   | Password |
+| testuser_1 | Test@153 |
+| testuser_2 | Test@154 |
+
+@When("^User enters Credentials to LogIn$")
+public void user_enters_testuser_and_Test(DataTable usercredentials) throws Throwable 
+{
+	//Write the code to handle Data Table
+	for (Map<String, String> data : usercredentials.asMaps(String.class, String.class)) 
+	{
+		driver.findElement(By.id("log")).sendKeys(data.get("Username")); 
+		driver.findElement(By.id("pwd")).sendKeys(data.get("Password"));
+		driver.findElement(By.id("login")).click();
+	}
+}
+
+
+Map Data Tables to Class Objects
+And User enters Credentials to LogIn
+| Username   | Password |
+| testuser_1 | Test@153 |
+| testuser_2 | Test@154 |
+
+public void user_enters_testuser_and_Test(List<Credentials>  usercredentials) throws Throwable 
+{
+	//Write the code to handle Data Table
+	for (Credentials credentials : usercredentials) 
+	{			
+		driver.findElement(By.id("log")).sendKeys(credentials.getUsername()); 
+		driver.findElement(By.id("pwd")).sendKeys(credentials.getPassword());
+		driver.findElement(By.id("login")).click();
+	}		
+}
+
+package stepDefinition;
+
+public class Credentials {
+	private String username;
+	private String password;
+
+	public String getUsername() {
+        return username;
+    }
+	public String getPassword() {
+        return password;
+    }	
+}
+
+
+
+http://www.softpost.org/cucumber/multiple-column-datatable-in-cucumber/
+
+Feature: Multiple column data table
+  Scenario: Create new student records
+  Given We have below list of students
+  | name          | id        | address |
+  | sagar         | 288345    |Brisbane |
+  | watson        | 38829     | London  |
+  | paul          | 34223     |Chicago  |
+
+public class Student {
+    private String name;
+    private String address;
+    private int id;
+
+    public Student(String name, int id, String address) {
+        this.name = name;
+        this.id = id;
+        this.address = address;
+    }
+
+    public void printStudent(){
+        System.out.println("\nStudent -> " + name +", " + id + ", " + address);
+    }
+}
+
+@Given("^We have below list of students$")
+public void we_have_below_list_of_students(DataTable arg1) throws Throwable 
+{
+	List<Student> students = arg1.asList(Student.class);
+        for(Student s : students){
+            s.printStudent();
+        }
+}
+
+
+** Feature Dependency
+Any feature level dependency should be tie with the background and any scenario level dependency should be tie with hooks.

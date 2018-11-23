@@ -1,0 +1,2140 @@
+https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java - MVN Dependency
+
+http://www.seleniumhq.org/download/
+http://seleniumhq.github.io/selenium/docs/api/java/index.html
+
+http://www.softwaretestinghelp.com/selenium-tutorial-1/
+http://www.Encartalabs.com/cisco_sel_trng.zip
+http://www.Encartalabs.com/selenium_material.zip
+www.slideshare.net/alan_parkinson/test-automation-with-cucumberjvm
+http://www.seleniumeasy.com/selenium-tutorials/take-screenshot-with-selenium-webdriver
+http://www.seleniumeasy.com/selenium-webdriver-tutorials
+http://www.guru99.com/selenium-tutorial.html
+
+
+http://www.gallop.net/blog/challenges-and-solutions-in-managing-selenium/
+http://software-testing-tutorials-automation.blogspot.in/2014/10/selenium-webdriver-job-interview.html
+http://software-testing-tutorials-automation.blogspot.in/2014/09/selenium-webdriver-latest-job-interview.html
+http://www.way2automation.com/selenium-webdriver-xpath-vs-css.php
+
+
+http://software-testing-tutorials-automation.blogspot.in/p/selenium-webdriver.html
+http://software-testing-tutorials-automation.blogspot.in/2014/01/learn-selenium-webdriver-online-free.html
+http://software-testing-tutorials-automation.blogspot.in/2014/05/selenium-webdriver-tutorials-part-two.html
+http://software-testing-tutorials-automation.blogspot.in/2014/09/selenium-webdriver-latest-job-interview.html(Having more pages)
+http://www.seleniumtests.com/p/selenium-interview-questions.html
+http://career.guru99.com/top-15-soap-ui-interview-questions/
+http://career.guru99.com/top-18-testng-interview-questions/
+
+http://www.zvon.org/comp/r/tut-XPath_1.html#intro
+http://www.guru99.com/xpath-selenium.html
+
+sravi@inbox.com
+
+http://toolsqa.com/selenium-webdriver/page-object-pattern-model-page-factory/ - Page Factory tutorial
+
+
+https://www.softwaretestingmaterial.com/difference-between-assert-and-verify/
+
+
+
+selenium wd installation - https://www.youtube.com/watch?v=inEo4E3BJ08
+testng installation - https://www.youtube.com/watch?v=WZFhPe-gS7M
+Chrome Driver downloads - http://chromedriver.storage.googleapis.com/index.html?path=2.35/
+
+Why WebDriver driver=new ChromeDriver() ?
+https://seleniumjava.com/2016/07/13/how-does-webdriver-driver-new-firefoxdriver-work/
+http://www.ufthelp.com/2015/01/Java-Interface-example-in-Selenium.html
+http://artoftesting.com/automationTesting/meaning-of-webdriver-driver-new-firefoxdriver.html
+
+
+** why-do-we-need-to-set-the-system-property-for-chrome-and-ie-browser-and-not-for
+https://stackoverflow.com/questions/35285698/why-do-we-need-to-set-the-system-property-for-chrome-and-ie-browser-and-not-for
+
+
+
+** Selenium server is not required when both tests and browser will run on the same machine
+
+WebDriver uses native browser approach. Selenium offers inbuilt driver for Firefox but not for other browsers. All drivers (Chrome Driver, IE driver, etc.) are built based on the special JS Engine used by each browser.
+
+Selenium WebDriver works very well with Mozilla Firefox because it has a built in driver server. But the same is not true for Internet Explorer and Google Chrome. Firefox is the most traditional browser, thus Selenium WebDriver do not require any additional utility to be set before launching the browser. The Selenium package automatically references towards the default location of the firefox.exe, thus the user need not to set any other property.
+
+** Firefox driver is included in the selenium-server-standalone.jar available in the downloads. The driver comes in the form of an xpi (firefox extension) which is added to the firefox profile when you start a new instance of FirefoxDriver.Firefox browser is natively supported in Selenium Web driver, but for all other browsers, third party web driver are available for Selenium
+The Firefox Driver controls the Firefox browser using a Firefox plugin. The Firefox Profile that is used is stripped down from what is installed on the machine to only include the Selenium WebDriver.xpi
+
+
+Gecko Driver is the link between your tests in Selenium and the Firefox browser.
+GeckoDriver is a proxy for using W3C WebDriver-compatible clients to interact with Gecko-based browsers i.e. Mozilla Firefox in this case.
+As Selenium 3 will not have any native implementation of FF, we have to direct all the driver commands through Gecko Driver.
+
+
+ChromeDriver is a standalone server which implements WebDriver's wire protocol.
+ChromeDriver is a standalone server which implements WebDriver's wire protocol for Chromium. 
+The ChromeDriver consists of three separate pieces. There is the browser itself ("chrome"), the language bindings provided by the Selenium project ("the driver") and an executable downloaded from the Chromium project which acts as a bridge between "chrome" and the "driver". This executable is called "chromedriver", but we'll try and refer to it as the "server" in this page to reduce confusion.
+
+
+The InternetExplorerDriver is a standalone server which implements WebDriver's wire protocol. This driver has been tested with IE 7, 8, 9, 10, and 11 on appropriate combinations of Vista, Windows 7, Windows 8, and Windows 8.1. As of 15 April 2014, IE 6 is no longer supported.
+
+The driver supports running 32-bit and 64-bit versions of the browser. The choice of how to determine which "bit-ness" to use in launching the browser depends on which version of the IEDriverServer.exe is launched. If the 32-bit version of IEDriverServer.exe is launched, the 32-bit version of IE will be launched. Similarly, if the 64-bit version of IEDriverServer.exe is launched, the 64-bit version of IE will be launched.
+
+
+http commands for each action in selenium - https://www.w3.org/TR/webdriver/#close-window
+
+
+
+@BeforeSuite - Before Suite will always execute prior to all annotations or tests in the suite
+@BeforeTest - Before Test will always execute prior to Before Class, ,Before Method and Test Method 
+@BeforeClass - Before Class will always execute prior to Before Method and Test Method 
+@BeforeMethod - Before Method will execute before every test method
+@Test 
+@AfterMethod - After Method will execute after every test method 
+@AfterClass - After Class will always execute later to After Method and Test method
+@AfterTest - After Test will always execute later to After Method, After Class 
+@AfterSuite - After suite will always execute at last when all the annotations or test in the suite have run.
+
+
+@Test attributes
+-----------------------
+@Test(enabled = false) - the test case that is not ready to test is bypassed.
+@Test (dependsOnMethods = { “OpenBrowser” ,”database is up” })
+@Test(groups = { "functest", "checkintest" })
+@Test(alwaysRun = true)
+@Test(dataProvider = “Hello”)
+@Test(description = “test method”)
+@Test(invocationCount = 7) . Hence, this method will execute 7 times.
+@Test(invocationCount =7,invocationTimeOut = 30 )
+@Test(priority =1 )
+@Test(expectedExceptions = ArithmeticException.class)
+
+
+throw new SkipException("") - To skip test
+
+
+@Factory - A factory will execute all the test methods present inside a test class using a separate instance of the respective class with different set of data.
+@Factory - to invoke an entire TestNG test class again and again with diff parameters
+Refer - TestNGProj > src > SimpleTestFactory.java
+
+@DataProvider: A test method that uses DataProvider will be executed the specific methods multiple number of times based on the data provided by the DataProvider. The test method will be executed using the same instance of the test class to which the test method belongs.
+@Dataprovider - meant to send parameters to @Test
+
+
+
+Selenium Web Driver
+-----------------------
+by Thoughtworks
+
+RC - Remote Control
+
+selenium RC/core/server - 1.x
+
+2.x - web driver(latest 3.11.0)
+
+Selenium Suite - IDE, RC, WebDriver, Grid
+
+open source
+OS compatibility
+browser compatibility
+Support Multiple programming languages - java, c#, Ruby, Python, Javascript(Node)
+Parallel/distributed testing(silk test)
+
+selenese script
+grid
+
+java doesn't support multiple inheritance thats y interface
+constructor, over loading
+
+Gmail login page
+webelement
+
+locating element by class attribute having space will fail(Eg: rc-button rc-button-submit)
+Not recommended to use class attribute
+
+Selenium WebDriver API supports different possibilities to identify elements: by id, name, className, tagName, xpath, cssSelector, linkText, partialLinkText
+
+driver.findElement(By.id("element id"))
+driver.findElement(By.name("element name"))
+driver.findElement(By.className("element class"))
+driver.findElement(By.tagName("element html tag name"))
+driver.findElement(By.xpath("element name"))
+driver.findElement(By.cssSelector("css selector"))
+driver.findElement(By.link("link text"))
+driver.findElement(By.partialLinkText("First")
+
+
+
+
+xpath - absolute, relative
+absolute - unique, stable application
+Relative - development proj(having continuous change)
+
+xpath = //tagname[@attribute='value']
+
+If the path starts with a slash ( / ) it always represents an absolute path to an element!
+An absolute location path starts with a slash ( / ) and a relative location path does not
+
+absolute xpath starts with 
+html/body/div/div[2]/div[2]/div/form/div/div/div/div/div/input - by manually finding
+html/body/div[1]/div[2]/div[2]/div[1]/form/div[1]/div/div[1]/div/div/input[1] - by firepath
+
+
+relative xpath starts with //
+
+Syntax - //table/tbody/tr/th
+
+
+//*[@id='Email'] - by manual
+.//*[@id='Email'] - by firepath
+//input[@id='Email'] - finding id attribute as 'Email' in input tag
+//input[@id='Email' and @name='Email'] - when both id and name attribute as 'Email'
+
+//form/div/div/div/div/div/input
+//form/div/div/div/div/div/input[1]
+//form/div[1]/div/div[1]/div/div/input[1]
+//form/div/div/div/div/div/input[@type='email']
+html/body//form/div/div/div/div/div/input
+
+locating button by title - //button[contains(text(),'Try it')]
+
+//*[text()='Testing'] - if text 'Testing' is not present under any input tag
+
+
+1. basic xpath - //input[@name='uid']
+2. contains - 
+//*[contains(@type,'sub')] 
+//*[contains(@name,'btn')]
+//*[contains(@id='message')]
+//*[contains(text(),'here')]
+//button[contains(@id,’bttn’)] [contains(@class, ‘text’)]
+
+3. AND OR
+//*[@type='submit' OR @name='btnReset']
+//*[@id='Email' and @name='Email']
+
+4. starts-with - //label[starts-with(@id,'message')]
+5. text() - //td[text()='userid']
+
+6. xpath axes method
+//*[@type='text']//following::input
+//*[@type='text']//following::input[1]
+//button [contains(@class, ‘trigger’)]/following::input[contains(@id,’bttn’)]
+
+Ancestor: The ancestor axis selects all ancestors element (grandparent, parent, etc.) of the current node 
+//*[text()='Enterprise Testing']//ancestor::div[1]
+
+Child : Selects all children elements of the current node 
+//*[@id='java_technologies']/child::li
+
+Preceding: Select all nodes that come before the current node  - //*[@type='submit']//preceding::input
+
+Following-sibling: Select the following siblings of the context node
+//*[@type='submit']//following-sibling::input
+
+Parent: Selects the parent of the current node
+//*[@id='rt-feature']//parent::div
+
+Self: Selects the current node or 'self' means it indicates the node itself
+//*[@type='password']//self::input
+
+Descendant: Selects the descendants of the current node
+//*[@id='rt-feature']//descendant::a
+//*[@id='rt-feature']//descendant::a[1]
+
+
+ancestor - Selects all ancestors (parent, grandparent, etc.) of the current node
+parent - Selects the parent of the current node
+preceding - Selects all nodes that appear before the current node in the document, except ancestors, attribute nodes and namespace nodes
+preceding-sibling - Selects all siblings before the current node
+following - Selects everything in the document after the closing tag of the current node
+following-sibling - Selects all siblings after the current node
+self - Selects the current node
+child - Selects all children of the current node
+descendant - Selects all descendants (children, grandchildren, etc.) of the current node
+
+
+
+N th position elememt
+--------------------------
+(//input[@type='checkbox'])[3]
+(//input[@type='checkbox'])[position()=3]
+(//input[@type='checkbox'])[last()] - Last checkbox
+(//input[@type='checkbox'])[last()-1]
+
+OR 
+Get list of webelements, 
+iterate the list and check for label,
+if label matches, select the checkbox
+
+
+/table/tr[1]/td - 1st row 1st column
+/table/tr/td[1]|td[3] - will give only 1st column on each row
+/table/tr/td[1]|/table/tr/td[3] - can get 1st & 3rd column
+/table/tr/td[position() = 1 or position() = 3] - can get 1st & 3rd column
+/table/tr/(td[1]|td[3]) 
+
+
+<form id="loginForm">
+   <input name="username" type="text" />
+   <input name="password" type="password" />
+   <input name="continue" type="submit" value="Login" />
+   <input name="continue" type="button" value="Clear" />	
+</form>
+
+//form[input/@name='username']
+//form[@id='loginForm']/input[1]
+//input[@name='username']")
+
+//form[@id='loginForm']/*")
+//input[@name='continue'][@type='button']
+//form[@id='loginForm']/input[4]
+
+
+
+CSS Selector
+---------------
+Absolute
+Relative
+
+
+1. CSS Selector: Attribute
+Syntax - tagName[attributename=attributeValue]
+Example 1: input[id=email]
+Example 2: input[name=email][type=text]
+
+2. CSS Selector: Class
+* dot(.) refers to class.
+css=<HTML tag><.><Value of Class attribute>
+Example : label.remember
+
+3. CSS Selector: ID
+* # means id. #example means where are finding an element whose id is 'example'. 
+css=<HTML tag><#><Value of ID attribute>
+Example : input#name
+
+4. CSS Selector: ID/Class and attribute
+css=<HTML tag><. Or #><value of Class or ID attribute><[attribute=Value of attribute]>
+Two or more attributes can also be furnished in the syntax. For example, 
+Example : input#Passwd[type=’password’][name=’Passwd’]
+
+5. CSS Selector: Sub-string
+css=<HTML tag><[attribute^=prefix of the string]>
+Example : input#Passwd[name^=’Pass’]
+
+css=<HTML tag><[attribute$=suffix of the string]>
+Example : input#Passwd[name$=’wd’]
+
+css=<HTML tag><[attribute*=sub string]>
+css=input#Passwd[name*=’wd’]
+
+6. CSS Selector: Inner text
+css=<HTML tag><:><contains><(text)>
+a:contains('Log Out') - This will find the log out button on your page no matter where it’s located
+
+
+1. CSS is much more faster and simpler than the Xpath.
+2. In IE Xpath works very slow, where as Css works faster when compared to Xpath.
+
+
+Relative CSS  
+
+Direct child -> //div/a -> div > a
+Child or subchild -> //div//a -> div a
+Id -> //div[@id='example']//a -> div#example a
+Class -> //div[@class='example']//a -> div.example a
+Attribute value -> form input[name='username'] , input[name='continue'][type='button']
+
+Choosing a specific match: 
+
+<p>Heading</p>
+Cat
+Dog
+Car
+Goat
+
+ul#recordlist li:nth-of-type(4) - If we want to select the fourth li element (Goat) in this list, we can use the nth-of-type, which will find the fourth li in the list.
+ul#recordlist li:nth-child(4) - On the other hand, if we want to get the fourth element only if it is a li element, we can use a filtered nth-child which will select (Car) in this case.
+ul#recordlist *:nth-child(4) - Note, if you don’t specify a child type for nth-child it will allow you to select the fourth child without regard to type. This may be useful in testing CSS layout in Selenium.
+
+Sub-string matches:
+
+1. '^' symbol, represents the starting text in a string.
+2. '$' symbol represents the ending text in a string.
+3. '*' symbol represents contains text in a string.
+
+
+a[id^='id_prefix_'] - A link with an “id” that starts with the text “id_prefix_”
+a[id$='_id_sufix'] - A link with an “id” that ends with the text “_id_sufix”
+a[id*='id_pattern'] - A link with an “id” that contains the text “id_pattern”
+
+a:contains('Log Out') - This will find the log out button on your page no matter where it’s located
+
+
+*[id='Email']
+#Email
+input[id='Email'][name='Email']
+form div div div div div input
+form div div div div div input[type='email']
+
+
+CSS - Locating Child Elements (direct child only)
+Syntax - parentLocator>childLocator
+<div id="buttonDiv" class="small">
+	<button id="submitButton1" type="button" class="btn">Submit</button>
+</div>
+
+div#buttonDiv>button
+div.small>button
+
+CSS -Locating elements inside other elements (child or subchild)
+Syntax - locator1 locator2
+div#buttonDiv button
+
+
+CSS- nth child
+Syntax - :nth-child(n)
+<ul id="testingTypes">
+   <li>Automation Testing</li>
+   <li>Performance Testing</li>
+   <li>Manual Testing</li>
+</ul>
+CSS Locator - #testingTypes li:nth-child(2) - will select the element with id 'testingType' and then locate the 2nd child of type li i.e. 'Performance Testing' list item.
+
+
+Locating Siblings
+Syntax - locator1+locator2
+<ul id="testingTypes">
+   <li id="automation">Automation Testing</li>
+   <li>Performance Testing</li>
+   <li>Manual Testing</li>
+</ul>
+CSS Locator - li#automation + li - will first go to li element with id 'automation' and then select its adjacent li i.e. 'Performance Testing' list item.
+
+
+^ - Starts with
+Syntax - [attribute^=attributeValue]
+<button id="user1_btn_263" type="button" class="btn">Submit</button>
+CSS Locator - id^="user1"
+
+$ - Ends with
+Syntax - [attribute$=attributeValue]
+<button id="user1_btn_263" type="button" class="btn">Submit</button>
+CSS Locator - id$="btn_263"
+
+* - Contains
+Syntax - [attribute*=attributeValue]
+<button id="user1_btn_263" type="button" class="btn">Submit</button>
+CSS Locator - id*="btn"
+
+
+Absolute CSS
+html body div div:nth-child(2) div:nth-child(2) div form div div div div div input
+
+for firefox - firebug & firePath
+for IE - press F12 for firebug
+for chrome - Press F12 (http://www.softwaretestinghelp.com/locate-elements-in-chrome-ie-selenium-tutorial-7/)
+
+bbc.com
+.//*[@id='blq-main']/div/div[2]/div[3]/div[2]/ul/li[1]/a
+.//*[@id='blq-main']/div/div[2]/div[3]/div[2]/ul/li[2]/a
+.//*[@id='blq-main']/div/div[2]/div[3]/div[2]/ul/li[*]/a - Regex
+.//*[@id='blq-main']/div/div[2]/div[3]/div[2]/ul/li[3]/a
+
+
+Time synchronization
+implicit
+explicit
+WebDriver introduces classes like WebDriverWait and ExpectedConditions to enforce Explicit waits
+http://www.seleniumhq.org/docs/04_webdriver_advanced.jsp
+
+
+Implicit Wait
+------------------
+In implicit wait, if webdriver cannot find webelement in starting, it will wait for specified time duration. Webdriver will not search during this wait interval. Once specified time is over, it will try to search again for last time before throwing any exception.
+Implicit waits are used to provide a default waiting time (say 30 seconds) between each consecutive test step/command across the entire test script. Thus, subsequent test step would only execute when the 30 seconds have elapsed after executing the previous test step/command.
+
+* An implicit wait is to tell Web Driver to poll the DOM for a certain amount of time when trying to find an element or elements if they are not immediately available.The default setting is 0. Once set, the implicit wait is set for the life of the Web Driver object instance until it changed again. This means that we can tell Selenium that we would like it to wait for a certain amount of time before throwing an exception that if it cannot find the element on the page. If web driver able to find the element with in the given span <secs> it immediately returns true else it raises an exception after <secs>.
+
+* During Implicit wait if the Web Driver cannot find it immediately because of its availability, the WebDriver will wait for mentioned time and it will not try to find the element again during the specified time period. Once the specified time is over, it will try to search the element once again the last time before throwing exception. The default setting is zero. Once we set a time, the Web Driver waits for the period of the WebDriver object instance.
+
+* Implicit wait is used in cases where the WebDriver cannot locate an object immediately because of its unavailability. The WebDriver will wait for a specified implicit wait time and it will not try to find the element again during the specified time period. Once the specified time limit is crossed, the WebDriver will try to search the element once again for one last time. Upon success, it proceeds with the execution; upon failure, it throws an exception.
+It is a kind of global wait which means the wait is applicable for the entire driver. Hence, hardcoding this wait for longer time periods will hamper the execution time.
+
+Sets a timeout for all successive Web Element searches. For the specified amount of time it will try looking for element again and again before throwing a NoSuchElementException.  It waits for elements to show up.
+
+CMD: driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+
+Explicit Wait
+-------------------
+In Fluent wait and explicit wait, if wait time is 30 seconds, webdriver tries to search for element after some specified time say 500 miliseconds.
+WebDriver introduces Explicit waits where we can explicitly apply waits whenever the situation arises instead of forcefully waiting while executing each of the test step.
+Explicit waits are used to halt the execution till the time a particular condition is met or the maximum time has elapsed. Unlike Implicit waits, Explicit waits are applied for a particular instance only.
+
+An explicit waits is code you define to wait for a certain condition to occur before proceeding further in the code.The worst case of this is Thread.sleep(), which sets the condition to an exact time period to wait. There are some convenience methods provided that help you write code that will wait only as long as required. WebDriverWait in combination with ExpectedCondition is one way this can be accomplished.
+
+There can be instance when a particular element takes more than a minute to load. In that case you definitely not like to set a huge time to Implicit wait, as if you do this your browser will going to wait for the same time for every element.
+
+An 'explicit wait' waits for a certain condition to occur before proceeding further. It is mainly used when we want to click or act on an object once it is visible.
+
+It is a one-timer, used for a particular search.
+
+
+WebDriverWait wait = new WebDriverWait(wd, 10); //explicit wait
+wait.until(ExpectedConditions.titleContains("Homepage")); //explicit defined for condition
+wait.until(ExpectedConditions.presenceOfElementLocated(element)); //explicit defined for condition
+
+
+Expected conditions in explicit wait are
+1) elementToBeClickable() – The expected condition waits for an element to be clickable i.e. it should be present/displayed/visible on the screen as well as enabled.
+wait.until(ExpectedConditions.elementToBeClickable(By.xpath(“//div[contains(text(),’COMPOSE’)]”)));		
+
+2) textToBePresentInElement() – The expected condition waits for an element having a certain string pattern.
+wait.until(ExpectedConditions.textToBePresentInElement(By.xpath(“//div[@id= ‘forgotPass'”), “text to be found”));
+
+3) alertIsPresent()- The expected condition waits for an alert box to appear.
+wait.until(ExpectedConditions.alertIsPresent()) !=null);
+
+4) titleIs() – The expected condition waits for a page with a specific title.
+wait.until(ExpectedConditions.titleIs(“gmail”));
+
+5) frameToBeAvailableAndSwitchToIt() – The expected condition waits for a frame to be available and then as soon as the frame is available, the control switches to it automatically.
+wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.id(“newframe”)));
+
+6) wait.until(ExpectedConditions.presenceOfElementLocated(element));
+
+7) wait.until(ExpectedConditions.titleContains("Homepage"));
+
+
+wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.cssSelector(".demo-frame")));
+
+
+alertIsPresent 
+ElementExists
+ElementIsVisible
+element_located_selection_state_to_be 
+element_located_to_be_selected 
+ElementSelectionStateToBe(By, Boolean)
+ElementToBeClickable(IWebElement)
+ElementToBeSelected(By)
+frameToBeAvailableAndSwitchToIt(By locator)
+invisibilityOfElementLocated(By locator)
+PresenceOfAllElementsLocatedBy
+presenceOfElementLocated(By locator)
+staleness_of 
+text_to_be_present_in_element 
+text_to_be_present_in_element_value 
+visibility_of 
+visibility_of_element_located
+
+TitleContains
+TitleIs
+presenceOfElementLocated
+alertIsPresent
+ElementToBeClickable
+ElementToBeSelected
+ElementExists
+ElementIsVisible
+textToBePresentInElement
+
+
+Fluent Wait
+---------------
+A FluentWait instance defines the maximum amount of time to wait for a condition to take place, as well as the frequency with which to check the existence of the object condition.
+Let us say we will 60 seconds for an element to be available on the page, but we will check its availability once in every 10 seconds.
+
+
+Selenium Interactions
+------------------------
+Text box interaction
+Radio Button Selection
+Check Box Selection
+Drop Down Item Selection
+Synchronization
+Drag & Drop
+Keyboard Actions
+Mouse Actions
+Multi Select
+Find All Links
+
+
+Keyboard Actions - sendKeys, pressKey, releaseKey
+
+Mouse Actions - click, contextClick, doubleClick, mouseDown, mousemove, mouseup
+
+
+get method & navigate method
+
+driver.navigate().back() - This command lets the user to navigate to the previous web page.
+driver.navigate().back();
+
+driver.navigate().forward() - This command lets the user to navigate to the next web page with 
+
+driver.navigate().refresh() - This command lets the user to refresh the current web page there by reloading all the web elements.
+
+driver.navigate().to() - This command lets the user to launch a new web browser window and navigate to the specified URL.
+
+driver.navigate().to(“http://google.com”); - The above command requires a web URL as a parameter and then it opens the specified URL on a freshly launched web browser.
+
+
+junit comes up with eclipse - 
+junit code coverage tools - EclEmma, cobertura, clover
+https://dzone.com/articles/use-clover-generate-code-0
+
+
+testNG won't comes with eclipse, need to add library
+
+BeforeSuite
+BeforeTest
+BeforeClass
+BeforeMethod
+
+http://testng.org/doc/documentation-main.html
+
+group
+execution order = Priority 
+dependsOnMethods={""}
+
+
+ANT
+-----
+build (clean, compile, run)
+generate falshy reports(makexsltreports)
+batch file(save the file as "<>.bat")
+
+system variable
+ANT_HOME
+C:\Gopalsamy\Selenium Dump\apache-ant-1.9.4
+
+path
+;C:\Gopalsamy\Selenium Dump\apache-ant-1.9.4\bin
+OR
+;%ANT_HOME%\bin
+
+core of ANT is - build.xml
+
+ant clean
+ant compile
+ant run
+ant makexsltreports - for reports
+
+ant clean compile run makexsltreports 
+
+
+Day3
+------
+dynamic web table
+firefox profile
+
+
+when NosuchElementException
+--------------------------------
+Locator
+make sure one matching node
+take care of time sync
+take care of time New window
+take care of time frame
+
+
+For dynamic objects use following functions to find web element
+<button id="Submit-901" />
+<button id="Submit-902" />
+<button id="Submit-903" />
+//*[starts-with(@id,'Submit-')]
+//button[starts-with(@id, 'Submit-')]
+
+input[starts-with(@id,'input')] - xpath
+input[id^='email'] means Starting with - css
+
+input[ends-with(@id,'_field')] - xpath
+input[id$='_name'] means Ending with - css
+
+input[contains(@id,'field')] - xpath
+input[id*='userName'] means Containing - css
+
+//button[contains(text(),'Try it')]
+//*[contains(text(), 'title')]
+//*[contains(@href,'popup.php')]
+//*[@type='submit' and normalize-space(text()='title')] - if text having any leading and trailing spaces, we can trim it
+
+
+
+starts-with(string1, string2), 
+contains(string1, string2)
+substring(stringoffsetlength)
+substring-before(string1, string2)
+substring-after(string1, string2)
+string-length(string)
+normalize-space(string)
+concat(string1, string2, ...)
+format-number(number1, string1, string2)
+
+
+
+
+AutoIT - functional automation tool
+make an exe of non automatable things in selenium and use the exe 'Runtime.getRuntime().exec("notepad.exe");'
+
+disadv - 
+
+Web Application:
+* A web application or "web app" is a software program that runs on a web server. Unlike traditional desktop applications, which are launched by your operating system, web apps must be accessed through a web browser.
+* A Web application (Web app) is an application program that is stored on a remote server and delivered over the Internet through a browser interface. 
+
+
+Selenium
+-----------
+
+* Selenium is an open-source and a portable automated software testing tool for testing web applications
+* It has capabilities to operate across different browsers and operating systems
+* Selenium is not just a single tool but a set of tools that helps testers to automate web-based applications more efficiently
+* Selenium suite is comprised of 4 basic components - Selenium IDE, Selenium RC, Selenium WebDriver, Selenium Grid
+
+WebDriver comes as an extended version to Selenium RC with superfluous advantages and addresses many of its limitations. WebDriver extends its support to many latest browsers and platforms unlike Selenium IDE. WebDriver also doesn’t require Selenium server to be started prior to execution of the test scripts unlike Selenium RC
+
+WebDriver is a web-based testing tool with a subtle difference with Selenium RC. Since, the tool was built on the fundamental where an isolated client was created for each of the web browser
+
+Refer 'Selenium Webdriver JSON Wire Protocol' & 'Selenium Webdriver Architecture'
+we have mentioned that WebDriver uses the JSON wire protocol to communicate between client libraries and different drivers (that is, Firefox Driver, IE Driver, Chrome Driver, and so on) implementations. In this section, we will see exactly what it is and which different JSON APIs a client library should implement to talk to the drivers.
+
+JavaScript Object Notation (JSON) is used to represent objects with complex data structures. It is used primarily to transfer data between a server and a client on the web. It has very much become an industry standard for various REST web services, playing a strong alternative to XML.
+
+
+
+1. Selenium suite is comprised of 4 basic components; Selenium IDE, Selenium RC, WebDriver, Selenium Grid.
+2. WebDriver allows user to perform web based automation testing. WebDriver is a different tool altogether that has various advantages over Selenium RC.
+3. WebDriver supports a wide range of web browsers, programming languages and test environments.
+4. WebDriver directly communicates with the web browser and uses its native compatibility to automate.
+5. WebDriver’s support doesn’t only limits in the periphery of traditional user actions. Instead it supports efficient handling mechanisms for complex user actions like dealing with dropdowns, Ajax calls, switching between windows, navigation, handling alerts etc.
+6. WebDriver enables user to perform web based mobile testing. To support the same, WebDriver introduces AndroidDriver and IphoneDriver.
+7. WebDriver is faster than other tools of Selenium Suite because it makes direct calls to browser without any external intervention.
+
+Advantages of Selenium
+-------------------------
+* Selenium is an open-source tool
+* Can be extended for various technologies that expose DOM.
+* Has capabilities to execute scripts across different browsers.
+* Can execute scripts on various operating systems.
+* Supports mobile devices
+* Executes tests within the browser, so focus is NOT required while script execution is in progress.
+* Can execute tests in parallel with the use of Selenium Grids.
+Web driver- can create customized test results(ITestListener, IReporter)
+
+supports java, c#, Ruby, perl, PHP, python, JS
+ 
+Disadvantages of selenium
+----------------------------
+* Supports only web-based applications.
+* No feature such as Object Repository/Recovery Scenario
+* No IDE, so the script development won't be as fast as QTP.
+* Cannot access controls within the browser(favorites bar, backward, and forward buttons.)
+* No default test report generation
+* For parameterization, users has to rely on the programming language
+
+* Selenium supports only web based applications
+* It does not support the Bitmap comparison
+* For any reporting related capabilities have to depend on third party tools
+* No vendor support for tool compared to commercial tools like HP UFT
+* As there is no object repository concept in Selenium, maintainability of objects becomes difficult
+* can't use for hidden elements, captcha
+* Selenium does not support database testing
+* It is difficult to test Image based application
+* Selenium partially supports for Dialog boxes.
+* Selenium does not support file upload facility
+* No inbuilt reporting capability so you need plugins like JUnit and TestNG for test reports.
+* Lot of challenges with IE browser.
+* Selenium does not support built in add-ins support. 
+
+
+Selenium RC(Remote Control)
+------------------------------
+It allows us to write automated web application UI tests with the help of full power of programming languages such as Java, C#, Perl, Python, and PHP to create more complex tests such as reading and writing files, querying a database, and emailing test results.
+
+RC Architecture
+Selenium RC works in such a way that the client libraries can communicate with the Selenium RC Server passing each Selenium command for execution. Then the server passes the Selenium command to the browser using Selenium-Core JavaScript commands.
+The browser executes the Selenium command using its JavaScript interpreter.
+
+
+
+Selenium RC comes in two parts.
+1. The Selenium Server launches and kills browsers. In addition to that, it interprets and executes the Selenese commands. It also acts as an HTTP proxy by intercepting and verifying HTTP messages passed between the browser and the application under test.
+2. Client libraries that provide an interface between each one of the programming languages (Java, C#, Perl, Python, and PHP) and the Selenium-RC Server.
+
+Selenium Remote Control (RC) is a test tool that allows you to write automated web application UI tests in any programming language against any HTTP website using any mainstream JavaScript-enabled browser.
+
+
+Selenium WebDriver
+--------------------
+It is popularly known as Selenium 2.0. WebDriver uses a different underlying framework, while Selenium RC uses JavaScript Selenium-Core embedded within the browser which has got some limitations. WebDriver interacts directly with the browser without any intermediary, unlike Selenium RC that depends on a server. It is used in the following context:
+
+1. Multi-browser testing including improved functionality for browsers which is not well-supported by Selenium RC (Selenium 1.0).
+2. Handling multiple frames, multiple browser windows, popups, and alerts.
+3. Complex page navigation.
+4. Advanced user navigation such as drag-and-drop.
+5. AJAX-based UI elements.
+
+
+1. WebDriver's architecture is simpler than Selenium RC, as it controls the browser from the OS level.
+2. WebDriver interacts directly with the browser and uses the browser's engine to control it.
+3. WebDriver is faster, as it interacts directly with the browser.
+4. WebDriver can support the headless execution.
+5. Complex and a bit large API as compared to RC.
+6. Purely object-oriented API.
+7. Can test iPhone/Android applications.
+
+
+
+
+A headless browser is a web browser without a graphical user interface
+List of headless browsers: HtmlUnit, PhantomJS, TrifleJS, Splash, Ghost, ZombieJS, Watir-webdriver
+
+1. Fast compared to other browser
+2. can use it to create test data
+3. by default JavaScript is disabled in HTMLUnitDriver so you have to enable it while writing the script.
+HtmlUnitDriver driver = new HtmlUnitDriver(true);
+
+
+pros,
+HtmlUnit - test framework to access web app
+Fastest implementation of WebDriver
+A pure Java solution and so it is platform independent.
+Supports Javascript
+
+Cons,
+It cannot emulate other browsers JavaScript behavior
+Not for complex application
+doesn't support screenshot
+
+** HtmlUnitDriver is not supported on selenium-server-standalone-2.53.0. So use 2.52.0
+https://stackoverflow.com/questions/36882767/not-able-to-use-htmlunitdriver-in-eclipse
+http://selenium-release.storage.googleapis.com/index.html?path=2.52/
+
+
+DOM
+---------
+The Document Object Model is a platform- and language-neutral interface that will allow programs and scripts to dynamically access and update the content, structure and style of documents. The document can be further processed and the results of that processing can be incorporated back into the presented page. 
+
+The Document Object Model (DOM) is a programming API for HTML and XML documents. It defines the logical structure of documents and the way a document is accessed and manipulated. In the DOM specification, the term "document" is used in the broad sense - increasingly, XML is being used as a way of representing many different kinds of information that may be stored in diverse systems, and much of this would traditionally be seen as data rather than as documents. Nevertheless, XML presents this data as documents, and the DOM may be used to manage this data.
+
+The XML DOM is a standard for how to get, change, add, or delete XML elements.
+
+The W3C Document Object Model (DOM) is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document.
+
+
+JUnit
+------
+* JUnit is an open source unit testing tool and used to test small/large units of code
+* To run the JUnit test you don’t have to create class object or define main method
+* JUnit provide assertion library which is used to evaluate the test result. Annotations of JUnit are used to run the test method.
+* JUnit is also used to run the Automation suite having multiple test cases.
+* Junit assertions are used to validate certain condition and stops execution of program if the conditions are not satisfied.
+* junit comes up with eclipse, no need to add related jars as like TestNG
+
+@Test annotation is used to run a Junit test.
+@Before annotation is used to run any specific test before each test(will execute before every @Test)
+@BeforeClass - This method executes once before running all test. The method has to be a static method. Initialization of properties files, databases etc are done in beforeClass method
+@After - This method executes after each test.
+@AfterClass - Like @BeforeClass, @AfterClass executes once after executing all test methods. Like @BeforeClass method, @AfterClass method has to be a static method.
+Parameterized Junit class - Parameterized class is used to run same scenario with multiple dataset. @Parameters annotation tag is used to pass multiple data.
+
+
+
+JUnit Assertions:
+1. JUnit assertEquals: This checks if the two values are equal and assertion fails if both values are not equal.
+2. JUnit assertTrue: Returns true if the condition is true and assertion fails if the condition is false. By Simple, if the condition is false, msg will be printed
+
+Assert.assertTrue(“message”, condition); -> Msg will be printed when condition is false
+Assert.assertTrue(“Both the strings are not equal”, (“HelloWorld”).equals(“HelloWorld”));
+Here assertion will pass as both the strings match. It will print message if the assertion fails.
+** keep in mind that, if the given msg printed then test failed. If the condition passed, then case passed. If the condition failed then need to print given msg
+
+3.JUnit assertFalse: Returns true if the condition is false and assertion fails if the condition is true
+Assert.assertFalse(“message”, condition); -> Msg will be printed when condition is true
+Assert.assertFalse(“Both the strings are equal”, (“Hello”).equals(“HelloWorld”));
+There will not be any assertion error as the condition is false.
+
+
+List of JUnit assertions as bellow.
+
+1. assertEquals
+2. assertFalse
+3. assertTrue
+4. assertNull
+5. assertNotNull
+6. assertSame
+7. assertNotSame
+8. assertArrayEquals
+
+
+- See more at: http://software-testing-tutorials-automation.blogspot.in/2014/11/junit-with-selenium-webdriver-interview.html#sthash.s4RiiMPe.dpuf
+
+
+* Whenever run a test case/all cases on a project, JAR will be created(it is done by MAVEN)
+
+Locator Types and their Syntax
+----------------------------------
+
+id - driver.findElement(By.id(“ID_of_Element”))	- Locate by value of the “id” attribute
+className - driver.findElement(By.className(“Class_of_Element”)) - Locate by value of the “class” attribute
+linkText - driver.findElement(By.linkText(“Text”)) - Locate by value of the text of the hyperlink
+partialLinkText - driver.findElement(By.partialLinkText(“PartialText”)) - Locate by value of the sub-text of the hyperlink
+name - driver.findElement(By.name(“Name_of_Element”)) - Locate by value of the “name” attribute
+xpath - driver.findElement(By.xpath(“Xpath”)) - Locate by value of the xpath
+cssSelector - driver.findElement(By.cssSelector(“CSS Selector”)) - Locate by value of the CSS selector
+tagName - driver.findElement(By.tagName(“input”)) - Locate by value of its tag name
+
+
+<div id="name">
+driver.findElement(By.id("name"));
+
+<span class="even">
+driver.findElement(By.className("even"));
+
+<img src="./logo.png">
+driver.findElement(By.tagName("img"));
+
+<input name="color" value="blue">
+driver.findElement(By.name("color"));
+
+<a href="http://www.testingexcellence.com/">Software Testing</a>
+driver.findElement(By.linkText("Software Testing"));
+
+<a href="http://www.testingexcellence.com/">Software Testing</a>
+driver.findElement(By.partialLinkText("Testing"));
+
+useful methods on 'Select' class - selectByValue, selectByVisibleText, selectByIndex
+
+
+
+GIT commands
+--------------
+
+git status -> to know the status 
+git diff -> to list the diff
+gitk -> it will open git and showing diff
+git rm <file name> -> removing file
+git checkout <file name> -> checkout file from git(useful while recovering accidentally deleted files)
+
+git stash -> keep your local changes
+git pull -> to receive the latest checkin from the repositary
+git stash pop -> merge your local changes to the git pull
+git add <file name> -> adding a file
+git add --ignore-removal <file name> -> adding a file
+git commit -am "<message>" -> adding new file to git
+git push -> push the code to git after commit
+
+
+Need to push codes to git and push to artifactory(build the project by "clean install deploy -DskipTests=true")
+both should be sync
+
+
+to revert the changes
+-----------------------
+git reset --hard HEAD
+
+check the modification -> git status
+If the modification is not needed do - git checkout -- VOD_SM/src/it/resources/config.properties
+
+
+Alert
+---------
+Windows based alert pop ups
+Web based alert pop ups
+
+
+There are the four methods that we would be using along with the Alert interface.
+1) void dismiss() – The dismiss() method clicks on the “Cancel” button as soon as the pop up window appears.
+2) void accept() – The accept() method clicks on the “Ok” button as soon as the pop up window appears.
+3) String getText() – The getText() method returns the text displayed on the alert box.
+4) void sendKeys(String stringToSend) – The sendKeys() method enters the specified string pattern into the alert box.
+
+Alert alert = driver.switchTo().alert();
+alert.accept();
+
+
+
+Frame
+--------
+To switch inside a frame:
+
+driver.switchTo().frame(1); //pass frame number as parameter.
+or
+driver.switchTo().frame(“frame Name”); //pass frame name as parameter.
+or
+driver.switchTo().frame(“xpath of the frame”);
+
+driver.switchTo().defaultContent();  - go back to initial frame(1st frame)
+selects either the 1st frame on the page or the main document when a page contains iframes
+
+// Switch to current selected tab's content.
+driver.switchTo().defaultContent();
+
+Steps to find the frame properties :
+
+Inspect on the element using firepath
+Click on the dropdown with the name of the frame
+Right click on the name and "inspect in DOM" tab
+Maximize the elements and look for an id attribute inside frame elements
+
+
+Exceptions
+------------
+checked exception - Checked exception is handled during compile time and it gives compilation error if it is not caught and handled during compile time. FileNotFoundException, IOException etc
+unchecked exception - In case of unchecked exception, compiler does not mandate to handle. Compiler ignores during compile time. ArrayIndexoutOfBoundException
+Error - When a scenario is fatal and program cannot recover then JVM throws an error. Errors cannot be handled by try catch block. Even if user tries to handle error by using Try catch block, it cannot recover from error.Example: Assertion error, OutOfMemoryError etc.
+
+
+ElementNotVisibleException: If selenium tries to find an element but element is not visible within page
+NoAlertPresentException: If user tries to handle an alert box but alert is not present.
+NoSuchAttributeException: While trying to get attribute value but attribute is not available in DOM.
+NoSuchElementException: This exception is due to accessing an element which is not available in the page.
+WebDriverException: Exception comes when code is unable to initialize WebDriver.
+
+
+** Selenide throws ElementNotFound exception, because it wraps the original NoSuchElementException adding more details to it (like screenshot and timeout). It's by design.
+
+
+ElementNotSelectableException
+ElementNotVisibleException
+ErrorInResponseException
+InvalidSelectorException
+InvalidSwitchToTargetException
+MoveTargetOutOfBoundsException
+NoSuchElementException
+NoSuchAttributeException
+NoAlertPresentException
+NoSuchFrameException
+NoSuchWindowException
+UnexpectedAlertPresentException
+
+
+org.openqa.selenium.firefox.FirefoxDriver;
+org.openqa.selenium.chrome.ChromeDriver;
+org.openqa.selenium.ie.InternetExplorerDriver;
+org.openqa.selenium.WebDriver;
+org.openqa.selenium.WebElement;
+org.openqa.selenium.By;
+org.openqa.selenium.Keys; -> used while ENTER
+org.openqa.selenium.Alert; -> for alert popup
+org.openqa.selenium.interactions.Actions; - mouse movement
+org.openqa.selenium.support.ui.Select; - for drop down
+org.openqa.selenium.support.ui.WebDriverWait; -> explicit wait
+org.openqa.selenium.support.ui.ExpectedConditions; -> used in explit wait
+org.openqa.selenium.JavascriptExecutor; -> to execute java script
+org.apache.log4j.Logger; -> for logging
+
+
+click() Vs submit()
+You can use .click() method to click on any button.There is no restriction for click buttons.
+That means element's type = "button" or type = "submit", .click() method will works for both.
+If button is inside <form> tag or button is outside <form> tag, the click() method will work.
+
+we can use .submit() method for only submit form after click on button.
+That means element's type = "submit" and button should be inside <form> tag, then only submit() will work.
+If element's type = "button" means submit() will not work.
+If button outside of the <form> tag means submit() will not work
+
+
+drv.get() Vs drv.navigate().to()
+GET will wait till the whole page gets loaded i.e. the onload event has fired before returning control to our test or script.
+Webdriver will wait until the page has fully loaded before returning the control to test or script.
+
+NAVIGATE will just redirect to our required page and will not wait.
+
+driver.navigate().refresh();
+
+
+Maven's lifecycle
+---------------------
+Validate - validate the project is correct and all necessary information is available
+compile - compile the source code of the project
+test - test the compiled source code using a suitable unit testing framework. These tests should not require the code be packaged or deployed
+package - take the compiled code and package it in its distributable format, such as a JAR.
+integration-test - process and deploy the package if necessary into an environment where integration tests can be run
+verify - run any checks to verify the package is valid and meets quality criteria
+install - install the package into the local repository, for use as a dependency in other projects locally
+deploy - done in an integration or release environment, copies the final package to the remote repository for sharing with other developers and projects.
+
+
+Maven's plugin
+-------------------
+maven-compiler-plugin - used to compile the sources of your project
+build-helper-maven-plugin - This plugin contains various small independent goals to assist with the Maven build lifecycle
+maven-failsafe-plugin - Failsafe Plugin is designed to run integration tests. used during the integration-test and verify phases of the build lifecycle to execute the integration tests of an application
+exec-maven-plugin
+Maven Surefire Plugin - used during the test phase of the build lifecycle to execute the unit tests of an application. Surefire Plugin is designed to run unit tests
+Maven Source Plugin - creates a jar archive of the source files of the current project. The jar file is, by default, created in the project's target directory
+
+clean install -DskipTests=true
+
+clean integration-test -Dcucumber.options="--tags @WIP" -Dencoding="UTF-8"
+clean integration-test -Dcucumber.options="--tags @COMPLETED" -Dencoding="UTF-8"
+
+maven - build mgmt tool/dependency mgmt tool. convention over configuration
+
+
+
+
+XPath is used to navigate through elements and attributes in an XML document.
+
+
+TestDrivenDevelopment(TDD) - 
+BehaviorDrivenDevelopment(BDD) - an extension of TDD. Cucumber / Gherkin parser 
+KeywordDrivenDelelopment(KDD) - by keyword
+DatadrivenDevelopment(DDD) - data provider
+
+
+diff of absolute & relative xpath
+what is CSS and xpath
+why we go for xpath, disadv of xpath, y same xpath is not working on diff browsers
+maven, jenkins basic
+java oops
+selenium challenging u faced?
+did u do any addition in framework?
+7 locators
+diff of web based & window based
+how to get palindrome in diff ways
+ascii value 
+switchto window, switchto alert
+scrolling bar
+when xpath getting failed? - time sync prob
+xl, csv, db input
+
+
+
+
+Why same xpath is not working on diff browsers?
+Xpath engines are different in each browser, hence make them inconsistent
+IE does not have a native xpath engine, therefore selenium injects its own xpath engine for compatibility of its API. Hence we lose the advantage of using native browser features that WebDriver inherently promotes.
+Xpath tend to become complex and hence make hard to read in my opinion
+if the problem is that a locator which works for one browser (say Firefox or Chrome), should work for another browser (say Internet Explorer) but does not then you probably have a timing problem. The classic timing problem in Selenium is that there is ALWAYS a timing issue locating some elements but some browsers are so fast that the timing is so fast you don't see the timing requirement but other browsers are so slow you do see the timing requirement. The solution is to handling the wait for event properly. This fixes the problem with slow browsers but has no effect on fast browsers.
+The jaxen project is a Java XPath Engine. jaxen is a universal object model walker, capable of evaluating XPath expressions across multiple models. Currently supported are dom4j, JDOM, and DOM. 
+
+WebDriver uses a browser’s native XPath capabilities wherever possible. On those browsers that don’t have native XPath support, we have provided our own implementation. This can lead to some unexpected behaviour unless you are aware of the differences in the various xpath engines.
+
+The biggest reason for suggesting CSS selectors over XPath in IE is performance. IE does not provide a native XPath-over-HTML option as does Firefox and Chrome. It does, however, provide a native CSS selector engine, which will always be faster than the JavaScript-only XPath engine implementation used in the IE driver. 
+
+** Xalan and Saxon are two XPath engine and they provide there own API for XPath processing.
+
+xpath engines - Saxon 6.5.x, Xalan-J and Jaxen
+Saxon is a standalone XSLT, XQuery and XML Schema engine. It exists for Java, C, PHP and Javascript (in the browser). 
+
+
+
+xpath
+-------
+XPath is designed to allow the navigation of XML documents,with the purpose of selecting individual elements, attributes, or some other part of an XML document for specific processing.
+The Extensible Markup Language (XML) is the context in which the XML Path Language, XPath, exists. 
+In XPath the starting point is called the context node.
+
+In Selenium WebDriver software testing tool, XPath is used to locate the elements. Using XPath, We can navigate through elements and attributes In an XML document to locate software webpage elements like buttons, text box, links, Images etc.. 
+
+Absolute XPath
+Absolute XPath starts with the root node or a forward slash (/).
+The advantage of using absolute is, it identifies the element very fast.
+Disadvantage here is, if any thing goes wrong or some other tag added in between, then this path will no longer works.
+
+Example:
+If the Path we defined as
+1. html/head/body/table/tbody/tr/th
+
+If there is a tag that has added between body and table as below
+2. html/head/body/form/table/tbody/tr/th
+
+The first path will not work as 'form' tag added in between
+
+Relative Xpath
+A relative xpath is one where the path starts from the node of your choise - it doesn't need to start from the root node.
+
+It starts with Double forward slash(//)
+
+Syntax:
+//table/tbody/tr/th
+
+Advantage of using relative xpath is, you don't need to mention the long xpath, you can start from the middle or in between.
+
+Disadvantage here is, it will take more time in identifying the element as we specify the partial path not (exact path).
+
+If there are multiple elements for the same path, it will select the first element that is identified 
+
+** CSS selector is highly recommended over XPath due to its simplicity, speed, and performance.
+
+
+
+
+
+Latest version of Selenium Webdriver : 2.52.0(We are using 2.42.0 with FF esr 31) - 3.11.0
+Latest version of Cucumber: 2.3.2(we are using 1.1.8)  
+Latest version of JUnit: 4.12(we are using 4.11)
+Latest version of Apache Maven: 3.3.9
+Latest version of xpath: 3.1 - 
+Latest version of JAVA: Version 8 update 73(we are using Release 7 update 51)
+Eclipse Version: Luna Release (4.4.0) - oxygen 4.7
+httpclient jar -- version 4.3.3
+
+
+
+
+Cucumber-JVM supports the following JVM languages:
+Java
+Groovy
+Scala
+Clojure
+Jython
+JRuby
+Rhino JavaScript
+Gosu
+
+There are several ways to run scenarios with Cucumber-JVM:
+JUnit Runner
+CLI Runner
+Android Runner
+Third party runners
+
+
+
+Two main disadvantage of xPath locator as compared to cssSelector locator are as bellow.
+
+It Is slower than cssSelector locator.
+xPath which works In one browser may not work In other browser for same page of software web application because some browsers (Ex. IE) reads only Lower-cased tag name and Attribute Name. So If used It In upper case then It will work In Firefox browser but will not work In IE browser. Every browser reads xPath In different way. In sort, do not use xPath locators In your test cases of software web application If you have to perform cross browser testing using selenium WebDriver software testing tool.
+
+
+An 'explicit wait' waits for a certain condition to occur before proceeding further. It is mainly used when we want to click or act on an object once it is visible.
+---
+xpath issues--
+
+1. wait issue
+2. frame
+3. dynamic webelement
+4. dom changes--new element added/deleted
+
+
+
+popup window, dynamic text, testing flash (http://www.testinggeek.com./index.php/testing-tools/test-execution/...), capturing screenshots, data driven, reporting etc. 
+
+Below are the challenges while learning Selenium.
+
+1. handling popups
+
+2. Switching between windows
+
+3. Working with frames.
+
+4. Field validation
+
+5. How to identify dynamic objects.
+
+6. Xpath and CSS locators for identifying elements.
+
+
+
+Data Driven
+-----------------
+Automated tests play back a recorded (or programmed) sequence of user actions that cover a certain area of the tested application. To get larger coverage, you can perform tests with different input data. Suppose, for example, you recorded actions that input data into an application’s form. The recorded test contains only those values that you entered during the recording and, most likely, these values do not cause errors in the application, but other data may cause them. So, you have to run your test with different set of input data to ensure that the application works as expected for various input values. This testing approach is called data-driven testing.
+
+Of course, you can record many tests with various input data, but the best solution is to separate data from test commands. A data-driven test will read data from a storage, for example, from a file or database, rather than use hard-coded values. Such a separation makes tests logically simpler. A test containing several sets of hard-coded values can be rather difficult to modify and maintain. For instance, if you need more input data, you will have to modify the test commands.
+
+In this framework, the test data is separated and kept outside the Test Scripts, while test case logic resides in Test Scripts.  Test data is read from the external files ( Excel Files) and are loaded into the variables inside the Test Script.  Variables are used for both for input values and for verification values.
+
+Jxl library, Apache Poi Library
+
+
+Keyword Driven
+-----------------
+In this framework, keywords are developed which are equal to a unit level functionality. It is an independent framework which perform automation based on the keywords specified in the excel sheet. Based on the type of application, the number of keywords will be increased to handle different functionalities.
+
+The below are the few keywords which are used commonly in the web applications.
+open_Browser(browserName): In this method we need to pass browser name which will invoke the respective driver. example, If the user pass 'chrome' as a browser name, it will invoke the chrome driver.
+enter_TextOnTextBox(locator, locatorValue, textToEnter) :
+click_On_Link(locatorType, locatorValue):
+select_Checkbox(locatorType, locatorValue) and deselect_Checkbox(locatorType, locatorValue) 
+
+
+The keyword driven frameworks requires the development of data tables and keywords, independent of the test automation.  In a keyword driven test, the functionality of the application under test is documented in a table as well as step by step instructions for each test.
+
+
+
+What is Object Repository ?
+An object repository is an essential entity in any UI automations which allows a tester to store all object that will be used in the scripts in one or more centralized locations rather than scattered all over the test scripts.
+
+
+driver.getTitle()
+driver.getPageSource()
+driver.getCurrentUrl()
+driver.getWindowHandle()
+driver.getWindowHandles()
+
+
+double click 
+WebElement el  =  driver.findElement(By.id("ElementID"));
+Actions builder = new Actions(driver);
+builder.doubleClick(el).build().perform();
+
+right click
+Actions action = new Actions(driver).contextClick(element);
+action.build().perform();
+
+
+Introduced things to team
+----------------------------
+1. cucumber precheck & post check(@before is belongs to cucumber not junit)
+@Before (value ="tc id" order=1)
+@After
+
+2. prime widgets - //*[text()='Captcha']/ancestor::tr[1]//input[@type='text']
+3. autoauth
+4. scroll bar
+5. page object
+
+
+@Before @After - hooks
+@WIP - tags
+@Before(@WIP) - tagged hooks
+@Before(order =0) - ordering 
+
+File Upload/Download Using : Java-AutoIT-Selenium
+You can write AutoIt script and embed it in your framework code to handle windows components.
+
+
+scroll bar
+-------------
+import org.openqa.selenium.interactions.internal.Coordinates;
+import org.openqa.selenium.internal.Locatable;
+
+Coordinates coordinate = ((Locatable)we).getCoordinates();
+coordinate.inViewPort();
+
+JavascriptExecutor je = (JavascriptExecutor) driver;
+je.executeScript("arguments[0].scrollIntoView(true);", element);
+
+
+firefox profile - http://learn-automation.com/handle-untrusted-certificate-selenium/
+------------------
+FirefoxProfile profile = new FirefoxProfile();
+profile.setPreference("browser.link.open_newwindow", 2);
+File extentions = new File(System.getProperty("user.dir")
++ Validate.readsystemvariable("firefox.addons.path"));
+	if (extentions.exists()) {
+	for (File extention : extentions.listFiles()) {
+	if (extention.getName().endsWith(".xpi")) {
+	try {
+	profile.addExtension(new File(extention.
+	getAbsolutePath()));
+	} catch (IOException e) {
+	Assert.assertTrue(
+	"Exception occured while adding the extension to the profile..",
+	false);
+	}
+LogHandler.info("Added extention: "
+	+ extention.getName());
+	}
+	}
+	}
+	driver = new FirefoxDriver(profile);
+
+
+String script = "var addCredentialsEvent = new CustomEvent(\"add_credentials_to_passman\", {"
+	+ "   detail: {"
+	+ " host: '"
+	+ url
+	+ "',"
+	+ " realm: '"
+	+ uirealm
+	+ "',"
+	+ " username: '"
+	+ uiusername
+	+ "',"
+	+ " password: '"
+	+ uipassword
+	+ "'"
+	+ " } });"
+	+ " window.dispatchEvent(addCredentialsEvent);";
+
+
+
+Page Object - http://learn-automation.com/page-object-model-using-selenium-webdriver/
+----------------
+
+interface pageobject
+public static final String PAGETITLE_CSS=".pageTitleLabel";
+
+class CommonPagefactory implements pageobject
+@FindBy(css = PAGETITLE_CSS)
+public WebElement WE_PAGETITLE_CSS;
+@FindBys({@FindBy(css = ALERT_CRITICAL_DIV)})
+private List<WebElement> WE_CSS_ALERT_CRITICAL_DIV;
+
+now, we need to link webdriver & webelement in stepdef
+private CommonPagefactory commonpf -> creating ref for CommonPagefactory
+commonpf = PageFactory.initElements(SeleniumUtilities.getDriver(), CommonPagefactory.class);
+
+
+* Selenium has built in class called PageFactory, which they mainly created for Page Object purpose, which allows you to store elements in cache lookup
+
+https://code.google.com/p/selenium/wiki/PageFactory
+
+httpclient
+------------
+httpclient jar -- version 4.3.3
+import org.apache.http.client.methods.HttpDelete;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpPut;
+
+Refer - http://www.mkyong.com/webservices/jax-rs/restful-java-client-with-apache-httpclient/
+Refer - http://crunchify.com/how-to-create-restful-java-client-using-apache-httpclient-example/
+
+
+
+
+GET Method
+------------
+DefaultHttpClient httpClient = new DefaultHttpClient();
+HttpGet getRequest = new HttpGet("REST URI");
+
+((HttpMessage) getRequest).addHeader("Content-type","application/json"); 
+getRequest.addHeader("accept", "application/json");
+
+HttpResponse response = httpClient.execute(getRequest);
+if (response.getStatusLine().getStatusCode() != 200) {
+			throw new RuntimeException("Failed : HTTP error code : "
+			   + response.getStatusLine().getStatusCode());
+		}
+
+		BufferedReader br = new BufferedReader(
+                         new InputStreamReader((response.getEntity().getContent())));
+
+		String output;
+		System.out.println("Output from Server .... \n");
+		while ((output = br.readLine()) != null) {
+			System.out.println(output);
+		}
+
+POST Method
+---------------
+DefaultHttpClient httpClient = new DefaultHttpClient();
+HttpPost postRequest = new HttpPost("REST URI");
+StringEntity input = new StringEntity("payload");
+input.setContentType("application/json");
+postRequest.setEntity(input);
+HttpResponse response = httpClient.execute(postRequest);
+if (response.getStatusLine().getStatusCode() != 201) {
+			throw new RuntimeException("Failed : HTTP error code : "
+				+ response.getStatusLine().getStatusCode());
+		}
+
+		BufferedReader br = new BufferedReader(
+                        new InputStreamReader((response.getEntity().getContent())));
+
+		String output;
+		System.out.println("Output from Server .... \n");
+		while ((output = br.readLine()) != null) {
+			System.out.println(output);
+		}
+
+
+httppost on paypal
+-------------------------
+
+    /*CloseableHttpClient client = HttpClients.createDefault();
+			    HttpPost httpPost = new HttpPost("http://jaws/v1/QIJawsServices/restservices/database/MONEY/query");
+			    query = "{\"sqlQuery\":\"" + query + "\"}";
+			    StringEntity entity = new StringEntity(query,ContentType.APPLICATION_JSON);
+			    //StringEntity entity = new StringEntity(query,ContentType.create("application/json"));
+			    //StringEntity entity = new StringEntity(query);
+			    //input.setContentType("application/json");
+			    httpPost.setEntity(entity);
+			    httpPost.setHeader("Host","jaws");
+			    httpPost.setHeader("Origin","http://jaws");
+			    httpPost.setHeader("Accept", "application/json");
+			    httpPost.setHeader("Hostname","msmaster.qa.paypal.com");
+			    httpPost.setHeader("Referer","http://jaws/v1/QIJawsServices/");
+			    httpPost.setHeader("Content-type", "application/json");
+			    CloseableHttpResponse response = client.execute(httpPost);
+			    Assert.assertEquals(response.getStatusLine().getStatusCode(), 200);
+			    client.close();*/
+
+AutoIT
+-----------
+* is a freeware tool which is used for automating anything in Windows environment
+* to handle window pop-ups in Selenium WebDriver
+* There are tools available for automating window/desktops such as AutoIt, Robot Framework, Silk Test etc.
+
+
+WinWaitActive("File Upload")
+Send("G:\Tutorial\AutoItScripts\TestScripts\Test.doc")
+Send("{ENTER}")
+
+convert above .au3 file to .exe file so that we can exec as follow
+ 
+Runtime.getRuntime().exec("AutoIt .exe filepath");
+
+
+http://www.seleniumeasy.com/selenium-tutorials/uploading-file-with-sendkeys-method
+http://www.seleniumeasy.com/selenium-tutorials/how-to-download-a-file-with-webdriver
+http://www.softwaretestinghelp.com/autoit-tutorial-to-download-write-autoit-script/
+http://www.seleniumeasy.com/selenium-tutorials/upload-a-file-using-selenium-webdriver-with-autoit
+
+
+file upload
+--------------
+<input type="file" name="uploadsubmit">
+FirefoxDriver driver = new FirefoxDriver();
+driver.get(URL);
+driver.manage().window().maximize(); //ChromeOptions.addArguments("--start-maximized");
+WebElement element = driver.findElement(By.name("uploadsubmit"));
+element.sendKeys("D:/file.txt");
+String checkText = driver.findElement(By.id("message")).getText();
+Assert.assertEquals("File uploaded successfully", checkText);
+
+
+File download
+----------------
+driver.get("http://spreadsheetpage.com/index.php/file/C35/P10/");
+driver.findElement(By.linkText("smilechart.xls")).click();
+
+
+To use already opened/existing window
+---------------------------------------
+* Remote WebDriver adv 
+	- Separates where the tests are running from where the browser is
+	- allows tests to be run with browsers not available on the current os
+
+http://www.binaryclips.com/2016/03/selenium-webdriver-in-c-how-to-use.html
+http://www.binaryclips.com/2016/03/selenium-web-driver-in-c-how-to.html
+
+System.Uri uri = new System.Uri("http://localhost:7055/hub");
+WebDriver = new RemoteWebDriver(uri, DesiredCapabilities.Firefox());
+
+public static boolean selectWindow(WebDriver driver, String windowTitle){
+    //Search ALL currently available windows
+    for (String handle : driver.getWindowHandles()) {
+        String newWindowTitle = driver.switchTo().window(handle).getTitle();
+        if(newWindowTitle.equalsIgnoreCase(windowTitle))
+            //if it was found break out of the wait
+            return true;
+    }
+    return false;
+
+}
+
+
+WebDriver driver = new FirefoxDriver()
+
+its always a good practice to write code to interface and not implementation. So when you do List<Object> listObject = new ArrayList<Object>(); you always have the liberty to change ArrayList to LinkedList and elsewhere in the code will need no change. So programming to interface (List) here gives you the liberty/power to change the underlying implementation without affecting other places in code
+
+This is called Programming to an interface, not to an implementation.
+The use of interfaces allows a programming style called programming to the interface. The idea behind this is to base programming logic on the interfaces of the objects used, rather than on internal implementation details. Programming to the interface reduces dependency on implementation specifics and makes code more reusable
+
+Best practices say: Program against interfaces, not concrete classes.
+
+Interface Properties
+----------------------
+1. Class that implements an interface must implement all the methods declared in the interface.Now our FirefoxDriver class should implement all the methods declared inside an WebDriver interface, same is the case with ChromeDriver or IEDriver classes.
+2. While implementing methods, we must follow the exact same signature (name + parameters) as declared in the interface.
+3. We can not instantiate/create object of an Interface. webdriver driver = new webdriver ();
+4. All the variable inside an interface are by default public static Final.
+5. Class cannot Extend Interface only Implements it.
+6. Interface an Extend another Interface but then the class which implements the interface need to implemented the methods of both interface .
+7. Class can implement multiple Interface(Remember class cannot extend multiple classes,multiple inheritance in class is not possible)
+8. Interface can not hold constructor.
+9. Interface can not hold instance fields/variables.
+10. By default all the methods of Interface are public so no need to provide access modifiers.
+11. An interface can have another interface i.e. known as nested interface.
+
+
+
+
+
+
+XPath axes methods: These XPath axes methods are used to find the complex or dynamic elements. Below we will see some of these methods.
+//*[@type='text']//following::input - To select all nodes followed by input text
+//*[text()='Enterprise Testing']//ancestor::div - The ancestor axis selects all ancestors element (grandparent, parent, etc.) of the current node
+//*[@id='java_technologies']/child::li - Selects all children elements of the current node
+//*[@type='submit']//preceding::input - Select all nodes that come before the current node
+//*[@type='submit']//following-sibling::input - Select the following siblings of the context node. Siblings are at the same level of the current node. It will find the element after the current node
+//*[@id='rt-feature']//parent::div - Selects the parent of the current node
+//*[@type='password']//self::input - Selects the current node or 'self' means it indicates the node itself
+//*[@id='rt-feature']//descendant::a - Selects the descendants of the current node
+
+
+XPath axes methods: These XPath axes methods are used to find the complex or dynamic elements. Below we will see some of these methods.
+
+parent
+preceding
+ancestor
+self
+following
+child
+following-sibling
+Descendant
+
+
+ancestor - Selects all ancestors (parent, grandparent, etc.) of the current node
+parent - Selects the parent of the current node
+preceding - Selects all nodes that appear before the current node in the document, except ancestors, attribute nodes and namespace nodes
+preceding-sibling - Selects all siblings before the current node
+following - Selects everything in the document after the closing tag of the current node
+following-sibling - Selects all siblings after the current node
+self - Selects the current node
+child - Selects all children of the current node
+descendant - Selects all descendants (children, grandchildren, etc.) of the current node
+
+
+
+prime widgets - //*[text()='Captcha']/ancestor::tr[1]//input[@type='text']
+
+
+Refresh Page
+--------------
+1. driver.get(driver.getCurrentUrl());
+2. driver.navigate().to(driver.getCurrentUrl());
+3. driver.navigate().refresh();
+4. element.sendKeys(Keys.F5);
+5. element.sendKeys("\uE035");
+
+
+http://www.geeksforgeeks.org/category/data-structures/c-strings/
+http://www.geeksforgeeks.org/category/data-structures/c-strings/page/5/
+
+
+http://www.java2novice.com/java-interview-programs/
+http://javaconceptoftheday.com/find-most-repeated-word-in-text-file-in-java/ - Refer other questions on the left panel
+
+@optional - http://www.seleniumeasy.com/testng-tutorials/optional-annotation-in-testng
+
+
+Driver Commands
+--------------------
+driver.get();
+driver.getTitle();
+driver.getCurrentUrl();
+driver.getCurrentTitle();
+driver.getPageSource();
+driver.close();
+driver.quit();
+driver.getWindowHandle();
+driver.getWindowHandles();
+
+Webelement Commands
+-------------------
+element.clear();
+element.sendKeys("text");
+element.click();
+element.isDisplayed();
+element.isEnabled();
+element.isSelected();
+element.submit();
+element.getText();
+element.getTagName();
+element.getAttribute();
+element.getCssValue();
+element.getSize();
+element.getLocation();
+
+
+Action Class
+--------------
+Drag and Drop - clickAndHold(), moveToElement(), dragAndDropBy
+Mouse Hover - moveToElement()
+contextClick()
+clickAndHold()
+doubleClick()
+
+
+http://javahungry.blogspot.com/2015/03/difference-between-array-and-arraylist-in-java-example.html
+http://javahungry.blogspot.com/2014/03/difference-between-hashset-and-treeset-similarities-and-example.html
+http://javarevisited.blogspot.in/2011/12/how-to-traverse-or-loop-hashmap-in-java.html
+
+
+Cube Cinemas Telephonic
+--------------------------
+diff bw Scenario and scenario outline
+validating element's color by webdriver - 
+json read and write
+Maven proj directory structure
+security testing
+sql inject
+validating optional field in API response
+headless browser
+
+
+Trimble F2F
+--------------
+methods available on Object class - clone(), equals(Object obj), finalize(), getClass(), hashcode(),toString(),wait(), notify(), notifyAll()
+explain System.out.println() - http://net-informations.com/java/cjava/out.htm
+2nd largest salary from 2 tables - https://www.geeksforgeeks.org/sql-query-to-find-second-largest-salary/
+reading data from xl file
+About API testing - POST call
+combine 2 array and sorting
+puzzle - http://puzzles.nigelcoldwell.co.uk/twentytwo.htm
+
+
+Day to day activities
+reason for change
+Managing team
+http response status codes
+http methods - GET, POST, PUT, DELETE, TRACE, OPTIONS, HEAD, PATCH
+async api call - 202 Accepted
+authentication & authorization
+ssl
+ 
+http://javarevisited.blogspot.in/2012/12/how-to-find-second-highest-or-maximum-salary-sql.html
+SELECT * FROM Employee;
+SELECT max(salary) FROM Employee WHERE salary NOT IN (SELECT max(salary) FROM Employee);
+SELECT max(salary) FROM Employee WHERE salary < (SELECT max(salary) FROM Employee);
+3rd largest salary - SELECT name, MAX(salary) AS salary FROM employee WHERE salary < (SELECT MAX(salary) FROM employee WHERE salary < (SELECT MAX(salary) FROM employee)); 
+
+Comcast Telephonic
+-------------------
+Basic Selenium questions & API 
+
+Encore Telephonic
+-------------------
+API Testing 
+
+ASG Technology
+-----------------
+1. Initial screening round(questions on agile, about company)
+
+Citi
+---------
+1. Written test
+2. screening round F2F
+no of days between 2 given dates
+most repeated character in a string without using map, iteration
+sql query - distinct
+
+
+
+
+Global Logic Telephonic
+-------------------------
+session handling in selenium - FirefoxDriver
+Customization of testng report - ITestListener intf, IReporter Intf
+Why testng instead of junit
+TestNG @priority
+if priority is not given how the execution 
+methods of collection interface - add(Object element), addAll(Collection c), remove(Object element), removeAll(Collection c), retainAll(Collection c), size(), clear(), contains(Object element), containsAll(Collection c), iterator(), toArray(), isEmpty(), equals(Object element), hashCode()
+when to use map
+hashmap vs hashtable
+mostly used classes in list, set & Map
+
+
+NPCI - personality Assessment
+
+Fourkites - Manual, sql & programming assessment
+
+DXC - telephonic - not matching profile
+
+ICU Medical - F2F
+simple java prog
+about cucumber
+design pattens
+
+RBS - written test(Selenium suite, UFT & General QA questions)
+
+Trimble Telephonic & Hackerearth
+
+NPCI - F2F( General Questions)
+
+Verizon - F2F
+about profile
+how performance cycle works
+
+Apptium - F2F
+selenium questions
+which one is fast xpath or css and why?
+diff between stringbuffer & stringbuilder
+diff between hashmap & treemap
+fibonacci prog
+String reverse
+api questions
+mysql jdbc connection
+parallel test on cucumber not by TestNG
+
+
+Freshworks - Telephonic - Excellent
+is Restassured is threadsafe? Not threadsafe 
+clearing text by diff ways? not by clear() method 
+where is the selenium server here? WebDriver driver = new ChromeDriver(); 
+https://stackoverflow.com/questions/19953865/why-there-is-no-need-of-external-firefox-driver-like-ie-and-chrome-in-selenium2
+jsonwireprotocol
+threadlocal
+suggestions for framework development of webapplication
+how do you do parallel testing while starting of userstory?
+can we use webdriver for angujar js application?
+parallel testing of 2000 cases on same browser
+
+
+ABCO - 2 rounds
+can we update view? Yes we can 
+diff between union & union all - union combines tables with distinct value, union all just combine
+sql query for given prob statement
+selenium questions
+diff between jenkins and windows schedulor
+disadv of AutoIT
+why DataDriven & BDD
+sql query for given prob statement - complex subquery
+primenumber below the given number
+xpath by using following-sibling
+serialization & deserialization
+validating/assertion from soapUI
+
+Pramati
+Given scenario and asked logical & approaching for that 
+
+Wipro
+basic questions on selenium, java, mysql, maven
+select/print the current item displayed in a list box by using select class 
+custom exception in java
+how to give specific repo name on pom file
+
+Pramati - written test
+
+Agilysys - F2F
+program for inheritance & polymorphism
+REST calls prog for CRUD
+simple java program
+basics of java questions
+methods of Object class
+finding character in given string
+API call for booking seat at restaurant
+
+Agilysys - Skype Interview
+multiplication of 2 numbers without using + and * operator
+each character count in a given string
+Test case for above method
+about BDD framework development
+
+
+
+
+
+https://www.engprod-charter.net/
+
+auto complete text box - http://www.seleniumeasy.com/selenium-tutorials/working-with-ajax-or-jquery-auto-complete-text-box-using-webdriver
+
+
+Sikuli
+---------
+Sikuli is a tool to automate graphical user interfaces (GUI) using “Visual Image Match” method.In Sikuli, all the web elements should be taken as an image and stored inside the project. Sikuli will trigger GUI interactions based on the image visual match, the image which we have passed as the parameter along with all methods.
+
+* open source
+* it can identify object-using images/screenshots it means you can capture images for the script and can perform your operations as well depends on your requirement.
+* We can integrate with Selenium and with other tools as well
+* Flash testing
+* Mobile Testing
+* Windows/Desktop application testing
+
+
+To disable password save popup (how-to-disable-chrome-save-your-password-selenium-java)
+--------------------------------------------------------------------------------------------
+
+Refer - https://sqa.stackexchange.com/questions/26275/how-to-disable-chrome-save-your-password-selenium-java
+
+ChromeOptions cOpt = new ChromeOptions();
+cOpt.AddUserProfilePreference("credentials_enable_service", false);
+cOpt.AddUserProfilePreference("profile.password_manager_enabled", false);
+
+var options = new ChromeOptions();
+options.AddArguments("chrome.switches", "--disable-extensions --disable-extensions-file-access-check --disable-extensions-http-throttling --disable-infobars --enable-automation --start-maximized");
+options.AddUserProfilePreference("credentials_enable_service", false);
+options.AddUserProfilePreference("profile.password_manager_enabled", false);
+var driver = new ChromeDriver(options);
+
+ChromeOptions chOption = new ChromeOptions();
+options.addArguments("--start-maximized"); //to maximize window
+chOption.addArguments("--disable-extensions");
+options.addArguments("--disable-web-security");
+options.addArguments("--no-proxy-server");
+chOption.addArguments("test-type");
+Map<String, Object> prefs = new HashMap<String, Object>();
+prefs.put("credentials_enable_service", false);
+prefs.put("profile.password_manager_enabled", false);
+chOption.setExperimentalOption("prefs", prefs);
+driver = new ChromeDriver(chOption);
+
+
+TIP - options.addArguments("--start-maximized"); //to maximize window
+
+
+Here we are searching an anchor .contains text as 'SAP M' - //h4/a[contains(text(),'SAP M')]
+
+td[contains(text(),'Metaal')]/following-sibling::td[contains(@class,'value')]
+
+
+deleting cookie
+driver.manage().deleteAllCookies();
+
+How to right click and open the application in new window?
+Actions action=new Actions(driver);
+action.contextClick(we).perform();
+action.sendKeys("w").perform();
+
+http://automate-apps.com/how-to-perform-right-click-on-an-element-and-open-it-a-new-window-using-web-driver/
+action.contextClick(element).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
+action.contextClick(element).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
+
+
+https://www.guru99.com/handling-date-time-picker-using-selenium.html
+https://www.swtestacademy.com/datepicker-using-selenium/
+
+
+https://www.360logica.com/blog/multiple-ways-to-scroll-a-page-using-selenium-webdriver/
+
+
+scrolling, 
+window.scrollBy(xpixels,ypixels)
+
+where:
+xpixels is a Number and Required parameter:
+How many pixels to scroll by, along the x-axis (horizontal).
+Positive values will scroll to the left, while negative values will scroll to the right
+ypixels is a Number and Required parameter:
+How many pixels to scroll by, along the y-axis (vertical).
+Positive values will scroll down, while negative values scroll up
+
+//Scroll vertically down by 1000 pixels
+js.executeScript("window.scrollBy(0,1000)");
+
+//This will scroll the page till the element is found		
+js.executeScript("arguments[0].scrollIntoView();", Element);
+
+//To scroll down the web page at the bottom of the page
+js.executeScript("window.scrollTo(0, document.body.scrollHeight)");	
+
+//This will scroll the page Horizontally till the element is found		
+js.executeScript("arguments[0].scrollIntoView();", Element);
+
+//to perform Scroll on application using  Selenium
+JavascriptExecutor js = (JavascriptExecutor) driver;
+js.executeScript("window.scrollBy(0,-250)", "");
+
+
+JavascriptExecutor js = (JavascriptExecutor)driver;
+// if the element is on top
+js.executeScript("scroll(250, 0)");
+
+// if the element is on bottom.
+js.executeScript("scroll(0, 250)");
+
+
+
+Not Contains
+---------------
+not() is a function in xpath (as opposed to an operator), so
+//a[not(contains(@id, 'xx'))]
+
+
+
+
+http://www.software-testing-tutorials-automation.com/2015/01/selenium-webdriver-tips-and-tricks.html
+
+http://www.software-testing-tutorials-automation.com/2014/07/selenium-webdriver-frameworks-required.html
+
+
+
+** Support for geckodriver 0.16 is best in Firefox 52.0.3 and onwards
+https://github.com/mozilla/geckodriver#supported-firefoxen
+
+
+Limitations of screenshot
+---------------------------
+1. When any alert comes on screen and if you call screenshot method then it will fail because the alert is windows activity.
+2. When running cross browser testing if need to verify that test is running on which browser then you won’t be able to verify because it capture only web view part.
+
+
+** WebElement currentElement = driver.switchTo().activeElement(); - element having cursor is the active element
+
+
+innerHTML, outerHTML
+----------------------
+
+innerHTML - display content present inside a tag. it may be tags or just content
+innerHTML is a DOM property to insert content to a specified id of an element. It is used in Javascript to manipulate DOM.
+innerHTML is an Element property in JS that is used to get or set the HTML or XML markup contained within the element. innerHTML property can also be used to examine current HTML source of the page including any changes that have been made since the page was first loaded by the browser.
+innerHTML can be used to insert plain text content or HTML
+innerHTML = HTML inside the selected element.
+innerHTML is a property of a DOM element that represents the HTML inside the element, i.e. between the opening and closing tags. It has been widely copied, however implementations vary (probably because it has no published standard[1]) particularly in how they treat element attributes.
+
+
+
+<div class="uiStickyPlaceholderInput uiStickyPlaceholderEmptyInput">
+	<div class="placeholder" aria-hidden="true">First name</div>
+	<input id="u_0_l" class="inputtext _58mg _5dba _2ph-" type="text" aria-label="First name" placeholder="" aria-required="1" name="firstname" data-type="text"/>
+</div>
+above will print div & input tags present under upper div
+
+Manipulate Text - ((JavascriptExecutor)driver).executeScript("document.getElementsByClassName('slogan')[0].innerHTML = 'Welcome to Test'");
+** Str.InnerHTML change the inner content of tag. Example given above
+
+element.getAttribute("innerHTML");
+
+
+
+outerHTML - If you want the HTML of the element itself
+outerHTML = HTML inside the selected Element + HTML of the selected 
+
+element.getAttribute("outerHTML")
+
+str.outerHTML changes the inner content as well as tag.
+
+outerHTML includes the tags whereas innerHTML only contains the stuff in between the tags
+
+outerHTML is similar to innerHTML, it is an element property that includes the opening an closing tags as well as the content. It hasn't been as widely copied as innerHTML so it remains more-or-less IE only.
+
+
+<p id="pid">welcome</p>
+
+innerHTML of element "pid" == welcome
+outerHTML of element "pid" == <p id="pid">welcome</p>
+
+
+innerText, outerText
+------------------------
+
+innerText The textual content of the container.
+
+outerText Same as innerText when accessed for read; replaces the whole element when assigned a new value.
+outerText: Enables you to change all the element’s text, including the start and end tags
+
+<p id="pid">welcome</p>
+
+innerText of element "pid" == welcome
+outerText of element "pid" == welcome
+
+<html>
+<head><title>Your Title</title></head>
+<body>
+<h1>Heading</hi>
+<p id="para">hi <b>Your_Name</b></p>
+</body>
+<html>
+
+outerHTML will return - <p id="para">hi <b>Your_Name</b></p>
+
+outerText will return - hi Your_Name
+
+innerHTML will return - hi <b>Your_Name</b>
+
+innerText will return - hi Your_Name
+
+
+innerHTML is set or get content of the selected tag.
+outerHTML is set or get content with selected tag.
+
+innerText: what's between the tags of the element.
+outerText: content of the element, including the tags.
+
+innerText changes only text within HTML tags, e.g.
+
+<div>
+  <p>Change Me</p>
+</div>
+
+p.innerText = "Changed!"
+Becomes
+
+<div>
+  <p>Changed!</p>
+</div>
+Whereas outerText:
+
+<div>
+  <p>Change Me</p>
+</div>
+
+p.outerText = "Changed!"
+Becomes
+
+<div>
+   Changed!
+</div>
+
+
+
+page object pattern
+----------------------
+1. easy to maintain
+2. easy readability of scripts
+3. eliminate duplicacy
+4. re-usability of code
+5. reliability
+
+1. Home Page - Java Class(RediffHomepage)
+Objects of Home page
+2. Login Page - Java Class(Loginpage)
+objects of Login page
+
+testcases
+
+Page Factory
+-------------
+
+
+
+The WaitFor Command is used for pause execution process for specified time - default wait time of 'waitFor' is 30 secs
+
+Select the operating system which is NOT supported by Selenium IDE (unix, windows, solaris, linux) - UNIX
+
+The Selenium IDE is used - To test a web application against Firefox only.
+
+Select the Browser which is supported by Selenium IDE(Google chrome, opera mini, Mozilla Firefox, Internet Explorer) - Mozilla Firefox
+
+The Selenium RC is used - To run your test against different browsers (except HtmlUnit) on different operating systems.
+
+Select the language which is NOT supported by the Selenium RC (ASP, Java, C#, PHP) - ASP
+
+
+
+windows 10 having both IE and edge browser
+For windows 10 edge browser 
+// Set the driver path
+System.setProperty("webdriver.edge.driver","WebDriver exe path in your machine");
+
+//Start Edge Session
+WebDriver driver=new EdgeDriver();
+
+
+http://learn-automation.com/challenges-with-ie-browser-in-selenium-webdriver/
+
+DOM query is use for evaluating/finding an element on the page
+xpath is use to identify nodes in xml document
+CSS Selector is a section of code that is use to define style property of web page
+
+
+Select class
+-----------------
+deselectAll() - Clear all selected entries
+deselectByIndex(int index) - Deselect the option at the given index.
+deselectByValue(String) - Deselect all options that have a value matching the argument
+deselectByVisibleText(String) - Deselect all options that display text matching the argument
+getAllSelectedOptions() - All selected options belonging to this select tag
+getFirstSelectedOption() - The first selected option in this select tag (or the currently selected option in a normal select)
+getOptions() - All options belonging to this select tag
+selectByIndex(int index) - Select the option at the given index
+selectByValue(String) - Select all options that have a value matching the argument.
+selectByVisibleText(String) - Select all options that display text matching the argument
+isMultiple() - Whether this select element support selecting multiple options at the same time? This is done by checking the value of the "multiple" attribute
+
+
+
+
+reponame - GopalsamyKannan
+gopalsamykannan@gmail.com/Test@123
+C:\Users\gkannan\Documents\GitHub\Project
+
+
+fn:translate(string1,string2,string3)	Converts string1 by replacing the characters in string2 with the characters in string3
+Example: translate('12:30','30','45')
+Result: '12:45'
+Example: translate('12:30','03','54')
+Result: '12:45'
+Example: translate('12:30','0123','abcd')
+Result: 'bc:da'
+
+fn:replace(string,pattern,replace)	Returns a string that is created by replacing the given pattern with the replace argument
+Example: replace("Bella Italia", "l", "*")
+Result: 'Be**a Ita*ia'
+Example: replace("Bella Italia", "l", "")
+Result: 'Bea Itaia'
+

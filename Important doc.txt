@@ -1,0 +1,544 @@
+https://slackapitestcorp.slack.com/messages/CBTSS9ZPS/
+
+Maven-surefire-plugin is used to run the testing.xml file to pick and run the code in Jenkins
+
+Appium 
+
+
+http://automationtesting.in/execute-multiple-xml-files-testng/
+
+http://blog.teamtreehouse.com/install-node-js-npm-mac
+
+https://www.youtube.com/results?search_query=An+unknown+server-side+error+occurred+while+processing+the+command.+Original+error%3A+Unable+to+launch+WebDriverAgent+because+of+xcodebuild+failure
+
+
+Appium version : appium-desktop-1.2.7-mac.dmg
+
+Appium version used : 1.7.1
+
+
+{
+  "platformName": "IOS",
+  "automationName": "XCUITest",
+  "deviceName": "iPhone 8 Plus",
+  "app": "/Users/sshankarappa/Desktop/IOS-EDS-New/EDS Cockpit-qa.app"
+}
+
+
+
+Appium Xcode
+
+Open the project, click on Edscockpit.xcworkspace file, it will open the Xcode
+
+First we need to build the app in the sense click on run button, it will open the iPhone
+
+Select the project and click on run, it will open the app in mentioned iPhone 
+
+
+After 9.3, iOS version, we have XCUITest will be used.
+
+
+
+Start the Appium server
+Click on search icon,
+Select automatic servers
+Enter desired capabilities
+Save it
+
+
+https://appium.readthedocs.io/en/stable/en/writing-running-appium/touch-actions/
+
+Other method where we cannot find page elements : 
+Like(Popups) back, login, bookofwork, cancel etc
+
+Go to xcode, 
+
+Xcode->Open Developer Tool->Accessibility Inspector
+
+Click on focus icon and focus where ever its needed.
+
+Data in label section can be taken as By.name(“data”);
+
+
+If we get exception like Facebook: 
+
+It is due to compatibility phone compatibility issue
+Generate app for phone specific and run it through that phone, it helps
+
+curl -u mobile-app:5c9bc2c4-bf8a-4c34-bcf8-b1bce943be08 -X POST -H "Content-Type: application/octet-stream" https://saucelabs.com/rest/v1/storage/mobile-app/edscockpit-qa123_filterworking1.app.zip?overwrite=true --data-binary @/Users/sshankarappa/Desktop/sprint 123/edscockpit-qa123_filterworking.app.zip
+
+
+Types of Output of an API
+Output of API could be
+1.	Any type of data
+2.	Status (say Pass or Fail)
+3.	Call to another API function.
+
+Types of Bugs that API testing detects
+•	Fails to handle error conditions gracefully
+•	Unused flags
+•	Missing or duplicate functionality
+•	Reliability Issues. Difficulty in connecting and getting a response from API.
+•	Security Issues
+•	Multi-threading issues
+•	Performance Issues. API response time is very high.
+•	Improper errors/warning to caller
+•	Incorrect handling of valid argument values
+•	Response Data is not structured correctly (JSON or XML)
+
+Tools for API testing
+Since API and Unit Testing both target source code, similar tools can be used for testing both.
+•	SOAPUI - It's an easy-to-use tool with extensive REST and SOAP API testing capabilities – no scripting experience is required.
+•	Postman with jetpacks
+
+Challenges of API Testing
+Challenges of API testing includes:
+•	Main challenges in API testing is Parameter Combination, Parameter Selection, and Call Sequencing
+•	There is no GUI available to test the application which makes difficult to give input values
+•	Validating and Verifying the output in different system is little difficult for testers
+•	Parameters selection and categorization is required to be known to the testers
+•	Exception handling function needs to be tested
+•	Coding knowledge is necessary for testers
+
+HTTP Status Codes
+
+1xx: Informational	Communicates transfer protocol-level information.
+2xx: Success	Indicates that the client’s request was accepted successfully.
+3xx: Redirection	Indicates that the client must take some additional action in order to complete their request.
+4xx: Client Error	This category of error status codes points the finger at clients.
+5xx: Server Error	The server takes responsibility for these error status codes.
+
+How to pass parameters :
+1.	Header - Pass through URL
+2.	Body - Inside json format, there we can specify the parameters
+
+
+SOAP UI Tool,   (wsdl=web serve definition language, which contains the data in xml format)
+
+https://www.youtube.com/watch?v=XolvQaeRglk
+
+****At a time we can send only one request
+
+What ever developer has created, we just need to create a project
+1 interface will be created with n number of methods inside
+For each and every method we have one request
+
+//URL for the same should be copied with in URL tab
+
+If we click on a request, a xml code will open in request tab,
+Usually ‘?’ symbol Will be there in the request. If we want to search for a particular record, remove ‘?’ symbol mark and enter particular string, 
+
+If we run the same, for the request, we will get the specific response in soap format which developer wrote the code with all the details according to specification
+
+
+To Create a SOAP project : 
+Copy the ?wsdl link(Usually it will be provided by the developer)
+
+File->Create new SOAP project
+
+In Initial WSDL, copy the ?wsdl link
+It will automatically populate the name in Project Name section.
+We can edit our project name.
+
+Select CreateRequests check box, which will create a sample requests for all operations
+Click OK.
+
+It will create a project.
+If we enlarge the project, 2 info interface will be created.
+1 is actual and another one is duplicate with the name ending with 12
+If we open the first one, it will contain the methods wrt the wsdl file
+
+To give security, SOAP has (In request)
+
+Soapenv: Envelope 
+Soapenv: header
+Soapenv: body 
+
+Will be provided, so that no one can hack it
+
+In response, it will give soap based xml file
+Where it contains
+soap: Envelope
+Soap:body
+<responce tag>
+<actual response>
+
+
+How to write a test case for SOAP UI
+
+Say for example, for a foot ball team, how Many are there from Brazil?
+Or, if we pass data as 123 or some special charecters, if it is giving random response for the foot ball team, definitely its a defect, it should handle these type of situations as well.
+
+To Create, 
+First we need to create a test suite
+Go the that project, right click->Create Test Suite
+Enter the testSuite name, click OK
+
+Now a package has been created for the same.
+Right click on the testSuite package, select new test case
+Give appropriate name, click ok
+
+If open the test case, we will have 3 thins inside
+1.	Test Steps
+2.	Load Tests
+3.	Security Tests
+
+Our scope is test steps.
+Load and security, separate testers will do
+
+Right click on TestStep->Test Request
+Give name as ex: allPlayerRequest,
+Then it will give the list of functions available 
+Select appropriate method name
+Click ok
+Click ok
+
+Now we got the request
+If we run the same, it will give the response for the same
+
+Like this, we can create n number of test cases
+
+****Interview question
+How to create a project structure
+
+Project -TestSuite 1-TestCase1-TestRequest1,TestRequest2…
+                                                                TestCase2-TestRequest1,TestRequest2…
+
+                                TestSuite 2-TestCase1-TestRequest1,TestRequest2…
+                                                                TestCase2-TestRequest1,TestRequest2…
+
+                                TestSuite 3-TestCase1-TestRequest1,TestRequest2…
+                                                                TestCase2-TestRequest1,TestRequest2…
+ And so on
+
+Download the ReadyAPI or SoapUI Pro version 2.3.0(Latest version) 
+Opensource version is 5.4.0
+
+If we are not able to create a test suite or other things, on the top, select SOAPUI NG, it will work
+
+FInally, if we save the project, it will be saved as xml file
+
+
+@beforeTest
+
+@BeforeClass
+
+While running parallely some catch is there
+
+
+How to run classes parallely and series as well
+
+How to run failed test cases
+Re-try catch catch - for loop is effective
+
+Instead of .click(), which method we can used….. Keys.Enter();
+
+.click()
+Keys.Enter();
+Actions class
+JS executor
+Robot class
+
+Scroll into particular element - Possible methods (3 are there)
+
+Headless browser : we can execute production environment as well
+
+To find a word which is present in the page
+driver.pageSource(); we can do that
+
+How to verify the entered text
+findAttribute(@Value)
+
+.getLocation, we can check where my values or ele is there in the page
+
+
+
+To hit the position of the first 3 rows : position()<=3
+
+.//*[@id='app']/div/div[3]/div/div[2]/div[2]/div[1]/div/div[3]/table[2]/tbody/tr[position()<=3]
+
+
+To hit the last row : last()
+
+.//*[@id='app']/div/div[3]/div/div[2]/div[2]/div[1]/div/div[3]/table[2]/tbody/tr[last()]
+
+
+
+https://www.sapnaonline.com/books/c-programming-concepts-problems-solutions-jitender-kumar-0070700257-9780070700253
+
+
+
+
+
+Overriding equals : 
+
+https://wiki.sei.cmu.edu/confluence/display/java/MET09-J.+Classes+that+define+an+equals%28%29+method+must+also+define+a+hashCode%28%29+method
+
+
+https://www.geeksforgeeks.org/difference-equals-method-java/
+
+https://www.geeksforgeeks.org/comparator-interface-java/
+
+To calculate the reminder value 
+https://www.omnicalculator.com/math/remainder
+
+Understanding O(n) and O(log n) complexity
+https://www.quora.com/How-would-you-explain-O-log-n-in-algorithms-to-1st-year-undergrad-student-Can-any-one-explain-it-with-mathematical-proof-for-log-n-complexity-by-taking-a-simple-example-like-Binary-search-and-simple-to-understand
+
+
+
+
+
+App automation using selenium  -  Appium
+
+Advantages : 
+Open Source
+Can do user acceptance testing
+
+Disadvantages of Appium : 
+Versions are not stable
+As of now we are using 1.7.1 appium version
+Developer support is not there(24*7, support is not there)
+Initial setup will take more time
+
+https://stackoverflow.com/questions/28363221/advantages-and-disadvantages-of-appium 
+
+Native App :
+
+App which is written in 
+Android - Java, android SDK’s
+IOS - Swift language, Objective C
+
+Hybrid App :
+HTML - Structure of the page
+CSS - Styles, color codes, border
+JS
+
+Phone GAP(One of the famous IDE) is the IDE, where they will use to design an Application in IOS for web application
+For native, Xcode
+
+
+
+Hybrid app, will work with the help of internet connection
+Difference between native and hybrid application
+1.	Language we are using native and hybrid
+2.	Internet connection is not always required in native app, but must needed for Hybrid (Navigate to web or 3rd party application)
+
+Native Apps has 2 types
+Proprieteriship and Thirdparty application
+Proprieteriship - Message, Call
+Thirdparty application - Developed by third party people
+
+If we get the access in IOS, then only we can automate application
+As our applications are in development phase, we can easily moveahead, as access is enabled
+
+If we wanted to automate other apps in IOS, may be we can use developed ID and automate the same
+(Check Once)
+
+
+How to run the application in real devices in both IOS and Android devices
+
+Architecture of Appium : 
+
+IDE(POM)
+Appium Libraries(Jars) —(JSON)— Appim server ——  View (Android :UI Automator)  — Devices
+(Triggering Point)                                                                 
+
+Architecture in Appium
+Why JSON is used in Appium server?
+
+
+App package : Package of the whole application
+App Activity : When we open an application, which page has to come first(We need to select mail activity)
+
+APK info - will list all the apps the device.
+If we wanted to get the app details, we can long press and get the data
+
+
+
+Inspectors :
+1.	UI Automator Viewer —  Native (Android)
+2.	Appium Inspector — Native (Android and iOS)
+3.	Chrome Browser — (Hybrid / Mobile Web).          ————— Chrome://Inspect
+4.	Maccacaw Inspector. —— Native (Android and iOS)
+5.	Accesibility Inspector —Only for iOS,  (Native for sure)Check where we can use this inspector
+
+
+
+
+Service Now for API testing
+
+https://dev48879.service-now.com
+Username : admin
+Pass : 8904024948@Ss
+
+
+Devops
+
+https://www.youtube.com/watch?v=3EyT1i0wYUY&list=PL9ooVrP1hQOE5ZDJJsnEXZ2upwK7aTYiX 
+
+API videos
+
+https://www.youtube.com/watch?v=7YcW25PHnAA 
+
+https://www.youtube.com/watch?v=fx1JH2JKDzU&index=3&list=PL6flErFppaj2X3bInIqkw4wYGxT6n0n6H
+
+https://www.youtube.com/watch?v=aqrxDxumKZQ
+https://www.youtube.com/watch?v=7RUzarUREpo
+
+For SOAP UI validation
+https://www.youtube.com/watch?v=XolvQaeRglk
+
+
+Postman
+Restlet plugin
+Fundamentals of API testing
+SOA
+
+Different request response in API
+List of status codes
+
+
+Automation of Rest API using Rest Assured framework
+
+It is an open source Java Domain Specific Language
+Rest Assured is built on top of http client
+Supports both XML and JSON
+
+It supports all the below requests:
+POST
+GET
+PUT
+DELETE
+OPTIONS
+PATCH
+HEAD
+
+GET WILL GET THE DATA,
+AND OTHERS WILL MAKE CHANGES RESOURCE ON THE SERVER
+
+Preconditions needed for Rest Assured
+Java, Eclipse, Maven, TestNG
+
+http://rest-assured.io/, get the dependencies need for restAssured framework
+
+Fake API, useful to play with resources
+https://reqres.in/
+
+API
+http://parabank.parasoft.com/parabank/services/bank/customers/12212
+
+Doc on RestAPIs
+https://www.hascode.com/
+
+GET, DELETE, PUT will not create any load on server while making multiple calls
+Post can create load on server if made multiple calls
+
+POST perform the changes to server, post always creates resource in server
+Ex : Uploading the picture, sending tweet
+
+DELETE method will delete the data or resources from the server
+Ex : Deleting the photos, deleting any file
+
+PUT : Used to edit or update the resource (It will not create)
+Ex : Editing the resource
+
+To create a dummy JSON data in localhost
+
+npm install -g son-server
+
+To start the JSON server
+Son-server —watch db.json
+
+//Created
+http://localhost:3000/posts
+http://localhost:3000/comments
+http://localhost:3000/profile
+
+
+
+
+Select class
+
+To get all the options in the drop down
+
+Select.getOptions();
+
+
+isMultiple to check whether the drop down is allowing to select the options
+
+selectByVisibleText
+selectByIndex
+selectBy
+
+
+
+
+
+For uploading any file, we should use channels in slack
+Else use channel
+
+
+First read the slack document
+
+1.	Generate the token 
+2.	https://get.slack.help/hc/en-us/articles/215770388-Create-and-regenerate-API-tokens
+3.	https://api.slack.com/custom-integrations/legacy-tokens
+
+Complete documentation is available under this
+https://api.slack.com/methods/channels.info
+
+To post message to the channel
+https://api.slack.com/methods/chat.postMessage
+
+To add an attachment to the slack channel
+https://api.slack.com/methods/files.upload
+
+Slack : https://slackapitestcorp.slack.com/messages/DBW0B2G3F/
+
+Jira link : https://sindhoor.atlassian.net/issues/?filter=-1 
+
+
+Postman: 
+
+POSTMAN
+
+New->Collection (Kind of package/Project)
+
+GET/POST/PUT/DELETE/PATCH are http methods
+
+Postman is written in electron
+
+3 variables in Postman
+
+Global variable, environment variable and collection variable
+
+Global variable is advisable to create in collection
+
+1.	Create variables
+2.	Basic authorization across collection
+3.	Inherit auth from collection to child
+4.	Run the http requests sequentially
+
+https://sindhoor.atlassian.net for jira
+
+Create an issue through Jira
+
+
+curl -D- -u sindhoor1991@gmail.com:8904024948 -X POST -H “X-Atlassian-Token: no-check” -F “file=@/Users/sshankarappa/Desktop/1.png” https://sindhoor.atlassian.net/rest/api/2/issue/attachments
+
+TO give permissions to delete the issues which are in my Jira bucket
+
+https://sindhoor.atlassian.net/secure/admin/ViewPermissionSchemes.jspa
+
+Select particular project -> Permission -> Delete Issues -> Edit -> Application Access -> Any Logged In User -> Grant
+
+Now we can able to delete any issues which we created
+
+Path parameters - which will change in Url or endpoint
+Query parameter - which will be there in the response
+
+
+
+
+Anand Iyer

@@ -1,0 +1,35 @@
+Challenges :
+
+1. In our application explicit/implicit wait is not working as application is not stable, chances of failing is more, so we
+implemented re try - catch block, where it will wait until page loads or element is visible
+ 
+(Wait will not work, explicit/implicit wait is not working it is depending on applicationre/try catch)
+
+2. Some times buttons in the application should click, but it wont click some time, so we used re try-catch block
+to find the element in the next page
+
+(Some times buttons are clicked/not clicked, but in my script it is not throwing any exception - re/try catch block, next page validate some thing)
+
+3. We have hyCharts in our application, elements are not directly visible if we use findElement
+So, we should use findelement.finelements - like from root to child we need to traverse. 
+(hicharts automation - use findelement.findelemennts)
+
+4. jenkins - actions class is not working so we are using moveToElement()
+5. In iOS and windows application, when we integrate the code and run scripts will fail due to non - visibility of element.
+So, we used scrollIntoView(), a javascript executor to move to element.
+
+ScrollIntoView() is mainly used when we automate the hiCharts in our application
+
+5. As application is not stable, Most of the time we are getting synchronization issue - Usually timeOutExceptions
+We used re try/catch block to overcome the issue
+
+synchronisation issues - timeOutexception - explicit wait - 
+
+
+
+Our application is not stable
+In our reusable class re try/catch is implemented in our reusable methods
+
+
+
+
